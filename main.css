@@ -45,7 +45,7 @@ header nav ul li a:hover {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('hero.jpg') no-repeat center center/cover;
+    background: url('images/hero.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     display: flex;
