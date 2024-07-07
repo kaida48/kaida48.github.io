@@ -1,17 +1,31 @@
 /* styles.css */
 
+/* CSS Variables */
+:root {
+    --primary-color: #ff6600;
+    --secondary-color: #333;
+    --text-color: #fff;
+    --hover-color: #e65c00;
+    --font-family: Arial, sans-serif;
+    --font-size-large: 3em;
+    --font-size-medium: 1.5em;
+    --font-size-small: 1em;
+}
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     padding: 10px 20px;
 }
 
@@ -32,7 +46,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     padding: 5px 10px;
 }
@@ -42,11 +56,12 @@ header nav ul li a:hover {
     border-radius: 5px;
 }
 
+/* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
     background: url('images/hero.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -61,17 +76,17 @@ header nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: var(--font-size-large);
     margin: 0;
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: var(--font-size-medium);
 }
 
 .hero .btn {
-    background-color: #ff6600;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -79,9 +94,10 @@ header nav ul li a:hover {
 }
 
 .hero .btn:hover {
-    background-color: #e65c00;
+    background-color: var(--hover-color);
 }
 
+/* Introduction and CTA Sections */
 .introduction, .cta {
     padding: 40px 20px;
     text-align: center;
@@ -92,6 +108,7 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* Featured Section */
 .featured {
     display: flex;
     flex-wrap: wrap;
@@ -124,16 +141,17 @@ header nav ul li a:hover {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #ff6600;
+    color: var(--primary-color);
 }
 
 .feature a:hover {
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
 }
@@ -143,11 +161,18 @@ footer {
 }
 
 .footer-links a {
-    color: #ff6600;
+    color: var(--primary-color);
     text-decoration: none;
     margin: 0 10px;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature {
+        width: 100%;
+    }
 }
