@@ -193,6 +193,11 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+.introduction .highlight {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
+    color: #ff7b00; /* Apply orange color */
+}
+
 /* CTA Section */
 .cta {
     background-color: #0a0a0b; /* Keep background color as #0a0a0b */
