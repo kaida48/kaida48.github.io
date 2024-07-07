@@ -162,26 +162,19 @@ header nav ul li a:hover {
     font-family: 'PassA38', Arial, sans-serif; /* Apply PassA38 font */
     background-color: var(--primary-color);
     color: var(--text-color);
-    padding: 5px 20px; /* Adjust padding to make the button smaller in height */
     text-decoration: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 20px;
-    font-size: 2em; /* Keep the font size the same */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 .hero .btn:hover {
     background-color: var(--hover-color);
 }
 
-/* New Gradient Section */
-.gradient-section {
-    height: 50px; /* Adjust height as needed */
-    background: linear-gradient(to bottom, #000000, #0a0a0b);
-}
-
 /* Introduction and CTA Sections */
 .introduction, .cta {
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
     background-color: #0a0a0b; /* Changed background color to #0a0a0b */
     color: var(--text-color); /* Use the new text color */
@@ -193,12 +186,11 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.introduction .highlight {
+.introduction h2 .highlight {
     font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
     color: #ff7b00; /* Apply orange color */
 }
 
-/* CTA Section */
 .cta {
     background-color: #0a0a0b; /* Keep background color as #0a0a0b */
     padding: 60px 20px 100px 20px; /* Increase bottom padding */
@@ -236,43 +228,71 @@ header nav ul li a:hover {
 .featured {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between; /* Adjust to bring items closer */
     padding: 20px;
     background-color: #0a0a0b; /* Changed background color to #0a0a0b */
     color: var(--text-color); /* Use the new text color */
 }
 
 .feature {
-    width: 45%;
+    width: 846px; /* Set the width to 846px */
     margin-bottom: 20px;
     text-align: center;
+    position: relative; /* Add position relative for overlay */
+}
+
+.feature .image-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Set a fixed height for the container */
 }
 
 .feature img {
     width: 100%;
-    height: auto;
+    height: 100%; /* Ensure the image covers the container */
+    object-fit: cover; /* Ensure the image covers the area */
     border-radius: 10px;
 }
 
-.feature h3 {
+.feature .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    border-radius: 10px;
+}
+
+.feature .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    width: 90%; /* Ensure the text doesn't overflow */
+}
+
+.feature .text-overlay h3 {
     font-family: 'CustomFontBold', Arial, sans-serif;
     font-size: 1.5em;
     margin: 10px 0;
 }
 
-.feature p {
+.feature .text-overlay p {
     font-family: 'CustomFontRegular', Arial, sans-serif;
     font-size: 1em;
 }
 
-.feature a {
+.feature .text-overlay a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
     color: var(--primary-color);
 }
 
-.feature a:hover {
+.feature .text-overlay a:hover {
     text-decoration: underline;
 }
 
