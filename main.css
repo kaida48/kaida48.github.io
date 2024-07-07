@@ -71,26 +71,28 @@ header nav ul li a:hover {
 
 .hero .overlay {
     background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
+    width: 33%;
 }
 
 .hero h1 {
-    font-size: var(--font-size-large);
+    font-size: 4em;
     margin: 0;
 }
 
 .hero p {
-    font-size: var(--font-size-medium);
+    font-size: 2em;
 }
 
 .hero .btn {
     background-color: var(--primary-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
+    font-size: 1.5em;
 }
 
 .hero .btn:hover {
