@@ -4,7 +4,7 @@
 :root {
     --primary-color: #ff6600;
     --secondary-color: #333;
-    --text-color: #fff;
+    --text-color: #ffffff; /* Changed to white */
     --hover-color: #e65c00;
     --font-family: Arial, sans-serif;
     --font-size-large: 3em;
@@ -12,26 +12,91 @@
     --font-size-small: 1em;
 }
 
+/* Define custom fonts */
+@font-face {
+    font-family: 'CustomFontRegular';
+    src: url('fonts/fontname/CustomFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CustomFontBold';
+    src: url('fonts/fontname/CustomFont-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaspaceKrypton';
+    src: url('fonts/monaspace/MonaspaceKrypton/MonaspaceKrypton-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InstrumentSerifRegular';
+    src: url('fonts/InstrumentSerif/InstrumentSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PassA38';
+    src: url('fonts/PassA38/Pass_A38.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manifold';
+    src: url('fonts/manifold/manifold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'XTypewriterRegular';
+    src: url('fonts/XTypewriter/XTypewriter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global Styles */
 body {
-    font-family: var(--font-family);
+    font-family: 'CustomFontRegular', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #0a0a0b; /* Changed background color to #0a0a0b */
+    color: var(--text-color); /* Use the new text color */
 }
 
 /* Header */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 10px 20px; /* Adjust padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px; /* Adjust the height as needed */
+}
+
+header nav {
+    transform: translateX(-50px); /* Move navbar content 50px to the left */
 }
 
 header nav ul {
@@ -42,18 +107,21 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 10px;
+    margin: 0 15px; /* Increase spacing between items */
 }
 
 header nav ul li a {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply custom font */
     color: var(--text-color);
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 10px 15px; /* Adjust padding */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 header nav ul li a:hover {
-    background-color: #444;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Add hover effect */
+    color: #fff; /* Change text color on hover */
+    border-radius: 5px; /* Add border radius */
 }
 
 /* Hero Section */
@@ -67,6 +135,7 @@ header nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 60px; /* Add padding to account for fixed navbar */
 }
 
 .hero .overlay {
@@ -76,23 +145,28 @@ header nav ul li a:hover {
     width: 33%;
 }
 
-.hero h1 {
+.hero .overlay h1 {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
     font-size: 4em;
-    margin: 0;
+    margin: 0; /* Remove bottom margin */
+    color: #ff7b00; /* Apply orange color */
 }
 
-.hero p {
+.hero .overlay p {
+    font-family: 'PassA38', Arial, sans-serif; /* Apply PassA38 font */
     font-size: 2em;
+    margin: 0 0 20px 0; /* Add bottom margin */
 }
 
 .hero .btn {
+    font-family: 'PassA38', Arial, sans-serif; /* Apply PassA38 font */
     background-color: var(--primary-color);
     color: var(--text-color);
-    padding: 15px 30px;
+    padding: 5px 20px; /* Adjust padding to make the button smaller in height */
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
-    font-size: 1.5em;
+    font-size: 2em; /* Keep the font size the same */
 }
 
 .hero .btn:hover {
@@ -103,11 +177,48 @@ header nav ul li a:hover {
 .introduction, .cta {
     padding: 40px 20px;
     text-align: center;
+    background-color: #0a0a0b; /* Changed background color to #0a0a0b */
+    color: var(--text-color); /* Use the new text color */
 }
 
 .introduction h2, .cta h2 {
+    font-family: 'CustomFontBold', Arial, sans-serif;
     font-size: 2.5em;
     margin-bottom: 20px;
+}
+
+/* CTA Section */
+.cta {
+    background-color: #0a0a0b; /* Keep background color as #0a0a0b */
+    padding: 60px 20px 100px 20px; /* Increase bottom padding */
+    color: var(--text-color);
+    text-align: center;
+    border: 2px solid var(--primary-color); /* Add border to highlight the section */
+    border-radius: 10px; /* Add border radius */
+}
+
+.cta h2 {
+    font-size: 3em; /* Increase font size */
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.5em; /* Increase font size */
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    font-size: 2em; /* Keep the font size the same */
+    padding: 15px 30px; /* Increase padding */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.cta .btn:hover {
+    background-color: var(--hover-color);
 }
 
 /* Featured Section */
@@ -116,6 +227,8 @@ header nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    background-color: #0a0a0b; /* Changed background color to #0a0a0b */
+    color: var(--text-color); /* Use the new text color */
 }
 
 .feature {
@@ -131,11 +244,13 @@ header nav ul li a:hover {
 }
 
 .feature h3 {
+    font-family: 'CustomFontBold', Arial, sans-serif;
     font-size: 1.5em;
     margin: 10px 0;
 }
 
 .feature p {
+    font-family: 'CustomFontRegular', Arial, sans-serif;
     font-size: 1em;
 }
 
@@ -152,24 +267,34 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: var(--secondary-color);
+    background-color: #ff6600; /* Changed background color to #ff6600 */
     color: var(--text-color);
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Make the footer thinner */
+    display: flex;
+    justify-content: center; /* Center the footer links */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Allow absolute positioning of the created by text */
 }
 
 .footer-links {
-    margin: 10px 0;
+    margin: 0; /* Remove margin */
 }
 
 .footer-links a {
-    color: var(--primary-color);
+    color: #ffffff; /* Changed link color to white */
     text-decoration: none;
     margin: 0 10px;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+footer p {
+    margin: 0; /* Remove margin */
+    position: absolute; /* Position the text absolutely */
+    right: 10px; /* Align to the far right */
 }
 
 /* Responsive Design */
