@@ -173,6 +173,12 @@ header nav ul li a:hover {
     background-color: var(--hover-color);
 }
 
+/* New Gradient Section */
+.gradient-section {
+    height: 50px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, #000000, #0a0a0b);
+}
+
 /* Introduction and CTA Sections */
 .introduction, .cta {
     padding: 40px 20px;
