@@ -166,11 +166,21 @@ header nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    margin-top: 40px; /* Increase margin to add more space */
+    margin-top: 20px; /* Increase margin to add more space */
 }
 
 .hero .btn:hover {
     background-color: var(--hover-color);
+}
+
+/* Specific styles for the Join Now page */
+.join-hero .btn {
+    margin-top: 40px; /* Increase margin to add more space */
+}
+
+.join-hero .join-title {
+    font-size: 4em; /* Adjust font size if needed */
+    margin-bottom: 20px; /* Add margin to separate from the button */
 }
 
 /* Introduction and CTA Sections */
