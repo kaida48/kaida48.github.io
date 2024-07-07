@@ -166,6 +166,7 @@ header nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    margin-top: 40px; /* Increase margin to add more space */
 }
 
 .hero .btn:hover {
@@ -181,7 +182,7 @@ header nav ul li a:hover {
 }
 
 .introduction h2, .cta h2 {
-    font-family: 'CustomFontBold', Arial, sans-serif;
+    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -228,7 +229,7 @@ header nav ul li a:hover {
 .featured {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjust to bring items closer */
+    justify-content: center; /* Center the items */
     padding: 20px;
     background-color: #0a0a0b; /* Changed background color to #0a0a0b */
     color: var(--text-color); /* Use the new text color */
@@ -236,7 +237,7 @@ header nav ul li a:hover {
 
 .feature {
     width: 846px; /* Set the width to 846px */
-    margin-bottom: 20px;
+    margin: 10px; /* Reduce the margin to bring items closer */
     text-align: center;
     position: relative; /* Add position relative for overlay */
 }
@@ -275,14 +276,14 @@ header nav ul li a:hover {
 }
 
 .feature .text-overlay h3 {
-    font-family: 'CustomFontBold', Arial, sans-serif;
-    font-size: 1.5em;
+    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
+    font-size: 2em; /* Increase font size */
     margin: 10px 0;
 }
 
 .feature .text-overlay p {
     font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.2em; /* Increase font size */
 }
 
 .feature .text-overlay a {
@@ -290,6 +291,7 @@ header nav ul li a:hover {
     margin-top: 10px;
     text-decoration: none;
     color: var(--primary-color);
+    font-size: 1.2em; /* Increase font size */
 }
 
 .feature .text-overlay a:hover {
@@ -331,6 +333,58 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     .feature {
+        width: 100%;
+    }
+}
+
+/* Content Section */
+.content {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #0a0a0b;
+    color: var(--text-color);
+}
+
+.content h1 {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+}
+
+.step img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.step p {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero .overlay {
+        width: 90%;
+    }
+    .step {
         width: 100%;
     }
 }
