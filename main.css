@@ -262,139 +262,122 @@ header nav ul li a:hover {
     background-color: darkblue; /* Change hover color to dark blue */
 }
 
-/* Introduction and CTA Sections */
-.introduction, .cta {
-    padding: 60px 20px;
+/* Join Steps Section */
+.join-steps {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+}
+
+.join-steps h2 {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    font-size: 3em;
+    color: #ff7b00;
     text-align: center;
-    background-color: #0a0a0b; /* Changed background color to #0a0a0b */
-    color: var(--text-color); /* Use the new text color */
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.introduction h2, .cta h2 {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.introduction h2 .highlight {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
-    color: #ff7b00; /* Apply orange color */
-}
-
-.cta {
-    background-color: #0a0a0b; /* Keep background color as #0a0a0b */
-    padding: 60px 20px 100px 20px; /* Increase bottom padding */
-    color: var(--text-color);
-    text-align: center;
-    border: 2px solid var(--primary-color); /* Add border to highlight the section */
-    border-radius: 10px; /* Add border radius */
-}
-
-.cta h2 {
-    font-size: 3em; /* Increase font size */
-    margin-bottom: 20px;
-}
-
-.cta p {
-    font-size: 1.5em; /* Increase font size */
-    margin-bottom: 30px;
-}
-
-.cta .btn {
-    font-size: 2em; /* Keep the font size the same */
-    padding: 15px 30px; /* Increase padding */
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-}
-
-.cta .btn:hover {
-    background-color: var(--hover-color);
-}
-
-/* Featured Section */
-.featured {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the items */
-    padding: 20px;
-    background-color: #0a0a0b; /* Changed background color to #0a0a0b */
-    color: var(--text-color); /* Use the new text color */
-}
-
-.feature {
-    width: 846px; /* Set the width to 846px */
-    margin: 10px; /* Reduce the margin to bring items closer */
-    text-align: center;
-    position: relative; /* Add position relative for overlay */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-.feature:hover {
-    transform: scale(1.05); /* Slightly increase size on hover */
-}
-
-.feature .image-container {
+.step {
     position: relative;
-    width: 100%;
-    height: 300px; /* Set a fixed height for the container */
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature img {
-    width: 100%;
-    height: 100%; /* Ensure the image covers the container */
-    object-fit: cover; /* Ensure the image covers the area */
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.step-content {
+    display: flex;
+    align-items: center;
+}
+
+.step-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
+    margin-right: 30px;
 }
 
-.feature .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
-    border-radius: 10px;
-    transition: background-color 0.3s ease; /* Smooth transition */
+.step-text {
+    flex: 1;
 }
 
-.feature:hover .image-overlay {
-    background-color: rgba(0, 0, 0, 0); /* Remove overlay on hover */
+.step h3 {
+    font-family: 'PassA38', Arial, sans-serif;
+    font-size: 2em;
+    color: #ff7b00;
+    margin-bottom: 15px;
 }
 
-.feature .text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    text-align: center;
-    width: 90%; /* Ensure the text doesn't overflow */
-}
-
-.feature .text-overlay h3 {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply MonaspaceKrypton font */
-    font-size: 2em; /* Increase font size */
-    margin: 10px 0;
-}
-
-.feature .text-overlay p {
+.step p {
     font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1.2em; /* Increase font size */
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
 }
 
-.feature .text-overlay a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1.2em; /* Increase font size */
+.step-number {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff7b00;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.feature .text-overlay a:hover {
-    text-decoration: underline;
+/* Responsive design for join steps */
+@media (max-width: 768px) {
+    .join-steps h2 {
+        font-size: 2.5em;
+    }
+
+    .step-content {
+        flex-direction: column;
+    }
+
+    .step-image {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .step h3 {
+        font-size: 1.8em;
+    }
+
+    .step p {
+        font-size: 1em;
+    }
+
+    .step-number {
+        top: -20px;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
 }
 
 /* Footer */
@@ -431,59 +414,7 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .feature {
-        width: 100%;
-    }
-}
-
-/* Content Section */
-.content {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #0a0a0b;
-    color: var(--text-color);
-}
-
-.content h1 {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.content p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-.steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.step {
-    width: 300px;
-    margin: 10px;
-    text-align: center;
-}
-
-.step img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.step p {
-    font-size: 1em;
-    margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
     .hero .overlay {
         width: 90%;
-    }
-    .step {
-        width: 100%;
     }
 }
