@@ -44,7 +44,10 @@
         <div class="steps-container">
             <div class="step">
                 <div class="step-content">
-                    <img src="images/step1.jpg" alt="Step 1: Join Discord" class="step-image">
+                    <div class="step-image-container">
+                        <img src="images/step1.jpg" alt="Step 1: Join Discord" class="step-image">
+                        <div class="expand-icon">+</div>
+                    </div>
                     <div class="step-text">
                         <h3>Step 1: Join Our Discord Server</h3>
                         <p>Click the "Join Discord" button above to enter our community. Once there, Head to channels and roles and get yourself the After the Flash role to access its channels.</p>
@@ -55,7 +58,10 @@
 
             <div class="step">
                 <div class="step-content">
-                    <img src="images/step2.jpg" alt="Step 2: Read the Rules" class="step-image">
+                    <div class="step-image-container">
+                        <img src="images/step2.jpg" alt="Step 2: Read the Rules" class="step-image">
+                        <div class="expand-icon">+</div>
+                    </div>
                     <div class="step-text">
                         <h3>Step 2: Read the Rules and Lore</h3>
                         <p>Familiarize yourself with our community guidelines and the rich backstory of Project Phoenix on our website.</p>
@@ -66,7 +72,10 @@
 
             <div class="step">
                 <div class="step-content">
-                    <img src="images/step3.jpg" alt="Step 3: Create Your Character" class="step-image">
+                    <div class="step-image-container">
+                        <img src="images/step3.jpg" alt="Step 3: Create Your Character" class="step-image">
+                        <div class="expand-icon">+</div>
+                    </div>
                     <div class="step-text">
                         <h3>Step 3: Create Your Character</h3>
                         <p>Use the character template in our Discord server to design your unique persona. Head to the official After the Flash game to stylize that persona in the game. Our moderators will guide you through the process if help is needed.</p>
@@ -77,7 +86,10 @@
 
             <div class="step">
                 <div class="step-content">
-                    <img src="images/step4.jpg" alt="Step 4: Get Approved" class="step-image">
+                    <div class="step-image-container">
+                        <img src="images/step4.jpg" alt="Step 4: Get Approved" class="step-image">
+                        <div class="expand-icon">+</div>
+                    </div>
                     <div class="step-text">
                         <h3>Step 4: Get Your Character Approved</h3>
                         <p>Submit your character for approval in the #character-approval channel. Once approved, our team will assign your character to a faction that makes the most sense for your character and the plot.</p>
@@ -88,7 +100,10 @@
 
             <div class="step">
                 <div class="step-content">
-                    <img src="images/step5.jpg" alt="Step 5: Start Roleplaying" class="step-image">
+                    <div class="step-image-container">
+                        <img src="images/step5.jpg" alt="Step 5: Start Roleplaying" class="step-image">
+                        <div class="expand-icon">+</div>
+                    </div>
                     <div class="step-text">
                         <h3>Step 5: Jump Into the Action</h3>
                         <p>Wait for a roleplay session to start in the #events channel and start your adventure in the post-apocalyptic world of Project Phoenix!</p>
@@ -99,6 +114,11 @@
         </div>
     </section>
 
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="expandedImg">
+    </div>
+
     <footer>
         <p>Created by kaida48</p>
         <div class="footer-links">
@@ -107,5 +127,31 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-content');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.step-image-container').forEach(container => {
+            container.addEventListener('click', function() {
+                const img = this.querySelector('.step-image');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'block';
+            });
+        });
+
+        closeLightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
