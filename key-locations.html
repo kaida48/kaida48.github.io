@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Locations - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="key-locations.css">
 </head>
-<body>
+<body class="key-locations-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,32 @@
         </nav>
     </header>
 
-    <!-- Content for Key Locations page -->
-    <section class="content">
-        <h1>Key Locations</h1>
-        <p>Content for the Key Locations page goes here.</p>
-    </section>
+    <main class="key-locations-content">
+        <div class="key-locations-header">
+            <h1>Key Locations</h1>
+            <p>Explore the crucial sites in the search for Project Phoenix</p>
+        </div>
+
+        <div class="location-grid">
+            <section class="location military-base">
+                <h2>Ruined Military Base (USRF Outpost) 💡</h2>
+                <p class="location-hint">Initial clue about Project Phoenix's location.</p>
+                <p>Scattered documents and damaged computer systems hint at the last known locations related to Project Phoenix. Heavily guarded by automated defenses and traps.</p>
+            </section>
+
+            <section class="location radiated-zone">
+                <h2>Radiated Zone (Erie Station Power Plant) ☣️</h2>
+                <p class="location-hint">Dangerous area with high radiation and mutated creatures, possibly hiding a crucial entrance.</p>
+                <p>A treacherous area filled with high radiation levels and hostile mutated creatures. Rumored to have hidden underground tunnels leading to the Hidden Laboratory.</p>
+            </section>
+
+            <section class="location hidden-laboratory">
+                <h2>Hidden Laboratory (Black Mountain Complex) 🔬</h2>
+                <p class="location-hint">Secret underground lab where Project Phoenix was developed.</p>
+                <p>An underground bunker equipped with advanced security systems and filled with pre-war technology. The final location where Project Phoenix is hidden, guarded by automated defenses and AI.</p>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +64,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

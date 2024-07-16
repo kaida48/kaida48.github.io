@@ -92,22 +92,36 @@ header nav ul li a:hover {
     border-radius: 5px; /* Add border radius */
 }
 
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
 /* Rules Page Content */
 .rules-content {
     padding: 80px 20px;
-    background-color: #1a1a1a;
-    color: var(--text-color);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .rules-header {
     text-align: center;
     margin-bottom: 40px;
+    background-color: rgba(255, 123, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .rules-header h1 {
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 3em;
     color: #ff7b00;
+    margin-bottom: 10px;
 }
 
 .rules-header p {
@@ -116,8 +130,35 @@ header nav ul li a:hover {
     color: #ffffff;
 }
 
-.rule-section {
+.rules-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 40px;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.rule-section {
+    background-color: rgba(42, 42, 42, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .rule-section h2 {
@@ -125,6 +166,8 @@ header nav ul li a:hover {
     font-size: 2.5em;
     color: #ff7b00;
     margin-bottom: 20px;
+    border-bottom: 2px solid #ff7b00;
+    padding-bottom: 10px;
 }
 
 .rule-section .rule-content {
@@ -156,60 +199,22 @@ header nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-.rules-navigation {
-    text-align: center;
-    margin-bottom: 40px;
+.prohibited-actions, .dictionary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.nav-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-button:hover {
-    background-color: var(--hover-color);
-}
-
-.term-explanation {
-    display: flex;
-    justify-content: space-between;
-}
-
-.term {
-    width: 45%;
-}
-
-.term h4 {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 1.5em;
-    color: #ff7b00;
-    margin-bottom: 10px;
-}
-
-.term p {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1.1em;
-    color: #ffffff;
-}
-
-.prohibited-actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.action-card {
-    background-color: #2a2a2a;
+.action-card, .dictionary-item {
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
-    width: 48%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.action-card:hover, .dictionary-item:hover {
+    transform: translateY(-5px);
 }
 
 .action-card h4 {
@@ -223,21 +228,6 @@ header nav ul li a:hover {
     font-family: 'CustomFontRegular', Arial, sans-serif;
     font-size: 1.1em;
     color: #ffffff;
-}
-
-.dictionary-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.dictionary-item {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 48%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dictionary-item strong {
@@ -284,4 +274,49 @@ footer p {
     margin: 0; /* Remove margin */
     position: absolute; /* Position the text absolutely */
     right: 10px; /* Align to the far right */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+    }
+
+    header nav.active {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .rules-header h1 {
+        font-size: 2.5em;
+    }
+
+    .rule-section h2 {
+        font-size: 2em;
+    }
+
+    .prohibited-actions, .dictionary-grid {
+        grid-template-columns: 1fr;
+    }
 }

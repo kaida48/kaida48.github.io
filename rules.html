@@ -13,6 +13,7 @@
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -34,20 +35,23 @@
             <p class="rules-subtitle">Welcome to the wasteland of Project Phoenix. These rules are your survival guide in this post-apocalyptic world. Follow them to ensure a fair and immersive experience for all survivors.</p>
         </div>
 
+        <div class="rules-navigation">
+            <button class="nav-button" data-target="foreword">Foreword</button>
+            <button class="nav-button" data-target="basics">Basics</button>
+            <button class="nav-button" data-target="prohibited">Prohibited</button>
+            <button class="nav-button" data-target="required">Required</button>
+            <button class="nav-button" data-target="dictionary">Dictionary</button>
+            <button class="nav-button" data-target="general">General</button>
+            <button class="nav-button" data-target="character">Character</button>
+            <button class="nav-button" data-target="new-life">New Life</button>
+        </div>
+
         <section id="foreword" class="rule-section foreword">
             <h2>Foreword</h2>
             <div class="rule-content">
                 <p>Participants in the roleplay should be well-acquainted with the rules outlined in this document to ensure a fair and enjoyable experience for everyone. Not following these rules may lead to exclusion from the roleplay. It's important that all participants understand and respect the guidelines to maintain the integrity and immersion of the roleplaying environment. By joining the roleplay, you agree to these rules and acknowledge the consequences of breaking them.</p>
             </div>
         </section>
-
-        <div class="rules-navigation">
-            <button class="nav-button" data-target="basics">Basics</button>
-            <button class="nav-button" data-target="prohibited">Prohibited</button>
-            <button class="nav-button" data-target="required">Required</button>
-            <button class="nav-button" data-target="dictionary">Dictionary</button>
-            <button class="nav-button" data-target="general">General</button>
-        </div>
 
         <section id="basics" class="rule-section">
             <h2>Roleplay Basics</h2>
@@ -201,6 +205,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navButtons = document.querySelectorAll('.nav-button');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
 
             navButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -208,6 +214,10 @@
                     const targetSection = document.getElementById(targetId);
                     targetSection.scrollIntoView({behavior: 'smooth'});
                 });
+            });
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
             });
         });
     </script>

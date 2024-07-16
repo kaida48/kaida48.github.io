@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="events.css">
 </head>
-<body>
+<body class="events-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,62 @@
         </nav>
     </header>
 
-    <!-- Content for Events page -->
-    <section class="content">
-        <h1>Events</h1>
-        <p>Content for the Events page goes here.</p>
-    </section>
+    <main class="events-content">
+        <div class="events-header">
+            <h1>Key Events</h1>
+            <p>Experience the pivotal moments in the search for Project Phoenix</p>
+        </div>
+
+        <div class="event-timeline">
+            <section class="event discovery">
+                <div class="event-icon">🔬</div>
+                <div class="event-content">
+                    <h2>Discovery</h2>
+                    <p>Factions discover fragments of information pointing towards Project Phoenix.</p>
+                    <div class="event-details">
+                        <span class="event-location">Various Locations</span>
+                        <span class="event-time">Early Game</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event conflict">
+                <div class="event-icon">⚡</div>
+                <div class="event-content">
+                    <h2>Conflict</h2>
+                    <p>Skirmishes and alliances form as factions compete to reach the project first.</p>
+                    <div class="event-details">
+                        <span class="event-location">Contested Territories</span>
+                        <span class="event-time">Mid Game</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event revelation">
+                <div class="event-icon">🔍</div>
+                <div class="event-content">
+                    <h2>Revelation</h2>
+                    <p>Upon reaching the Hidden Laboratory, factions uncover the true nature of Project Phoenix.</p>
+                    <div class="event-details">
+                        <span class="event-location">Hidden Laboratory</span>
+                        <span class="event-time">Late Game</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event climax">
+                <div class="event-icon">❓</div>
+                <div class="event-content">
+                    <h2>Climax</h2>
+                    <p>A final confrontation where the factions must decide whether to use, control, or destroy Project Phoenix.</p>
+                    <div class="event-details">
+                        <span class="event-location">Project Phoenix Site</span>
+                        <span class="event-time">End Game</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +94,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

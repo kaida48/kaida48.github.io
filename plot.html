@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plot - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="plot.css">
 </head>
-<body>
+<body class="plot-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,37 @@
         </nav>
     </header>
 
-    <!-- Content for Plot page -->
-    <section class="content">
-        <h1>Plot</h1>
-        <p>Content for the Plot page goes here.</p>
-    </section>
+    <main class="plot-content">
+        <div class="plot-header">
+            <h1>The Plot Thickens</h1>
+            <p>Uncover the secrets of Project Phoenix and shape the future of the Sunrise Islands.</p>
+        </div>
+
+        <section class="main-plot">
+            <h2>Main Plot</h2>
+            <div class="plot-card">
+                <p>Rumors around "Project Phoenix", a secretive government tool that could either end the war or give the holder unparalleled power, are circulating around the island after a group of explorers has come across top secret documents by the USRF. The device is kept somewhere on the island and every faction is racing towards finding it.</p>
+            </div>
+        </section>
+
+        <section class="project-phoenix">
+            <h2>Project Phoenix</h2>
+            <div class="plot-card">
+                <p>Rumored to be a device that can manipulate nuclear energy on a massive scale, potentially ending the war by disabling all nuclear weapons or harnessing them for ultimate power.</p>
+            </div>
+        </section>
+
+        <section class="plot-implications">
+            <h2>Implications</h2>
+            <ul class="implications-list">
+                <li>Global power shift</li>
+                <li>End of nuclear warfare</li>
+                <li>Potential for world domination</li>
+                <li>Technological revolution</li>
+                <li>Ethical dilemmas</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +69,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

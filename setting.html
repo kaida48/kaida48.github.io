@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setting - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="setting.css">
 </head>
-<body>
+<body class="setting-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,39 @@
         </nav>
     </header>
 
-    <!-- Content for Setting page -->
-    <section class="content">
-        <h1>Setting</h1>
-        <p>Content for the Setting page goes here.</p>
-    </section>
+    <main class="setting-content">
+        <div class="setting-header">
+            <h1>The World of Project Phoenix</h1>
+            <p>Welcome to the desolate wasteland of the Sunrise Islands, where survival is a daily struggle and hope is a rare commodity.</p>
+        </div>
+
+        <section class="time-period">
+            <h2>Time Period</h2>
+            <div class="time-card">
+                <h3>2164</h3>
+                <p>The world is engulfed in the flames of World War 3, a nuclear conflict that has reshaped the face of the planet.</p>
+            </div>
+        </section>
+
+        <section class="location">
+            <h2>Location</h2>
+            <div class="location-card">
+                <h3>Sunrise Islands</h3>
+                <p>Once a thriving archipelago, now a desolate wasteland in the aftermath of a devastating nuclear strike. The islands are home to scattered survivors and various factions vying for control and resources.</p>
+            </div>
+        </section>
+
+        <section class="environment">
+            <h2>Environment</h2>
+            <ul class="environment-list">
+                <li>Irradiated zones</li>
+                <li>Ruined cities</li>
+                <li>Underground shelters</li>
+                <li>Mutated wildlife</li>
+                <li>Scarce resources</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +71,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

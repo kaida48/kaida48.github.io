@@ -1,0 +1,247 @@
+/* CSS Variables */
+:root {
+    --primary-color: #ff6600;
+    --secondary-color: #333;
+    --text-color: #ffffff;
+    --hover-color: #e65c00;
+    --font-family: Arial, sans-serif;
+}
+
+/* General styles */
+body.setting-page {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-image: url('images/featured/setting.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Add an overlay to improve text readability */
+body.setting-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav {
+    transform: translateX(-50px);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+        display: none;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    header nav.active {
+        display: block;
+        max-height: 500px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Setting content styles */
+.setting-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 80px;
+}
+
+.setting-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.setting-header h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.setting-header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    margin-bottom: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.time-card, .location-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.time-card h3, .location-card h3 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.time-card p, .location-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.environment-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.environment-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.environment-list li:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer styles (similar to other pages) */
+footer {
+    /* ... (copy from main.css) ... */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .setting-header h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .time-card h3, .location-card h3 {
+        font-size: 1.8em;
+    }
+
+    .environment-list {
+        grid-template-columns: 1fr;
+    }
+}

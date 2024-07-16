@@ -1,0 +1,249 @@
+/* CSS Variables */
+:root {
+    --primary-color: #ff6600;
+    --secondary-color: #333;
+    --text-color: #ffffff;
+    --hover-color: #e65c00;
+    --font-family: Arial, sans-serif;
+}
+
+/* Define custom fonts */
+@font-face {
+    font-family: 'CustomFontRegular';
+    src: url('fonts/fontname/CustomFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaspaceKrypton';
+    src: url('fonts/monaspace/MonaspaceKrypton/MonaspaceKrypton-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General styles */
+body.factions-page {
+    font-family: 'CustomFontRegular', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-image: url('images/featured/factions.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Add an overlay to improve text readability */
+body.factions-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav {
+    transform: translateX(-50px);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+        display: none;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    header nav.active {
+        display: block;
+        max-height: 500px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Factions content styles */
+.factions-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 80px;
+}
+
+.factions-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.factions-header h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.factions-header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.faction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.faction {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faction:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faction h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.faction-motto {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.faction p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Unique colors for each faction */
+.usrf { border-left: 5px solid #0066cc; }
+.bandit-gangs { border-left: 5px solid #cc0000; }
+.resistance { border-left: 5px solid #00cc66; }
+.alumni { border-left: 5px solid #cc00cc; }
+
+/* Footer styles (same as in other pages) */
+footer {
+    /* ... */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .factions-header h1 {
+        font-size: 2.5em;
+    }
+
+    .faction-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile menu styles (same as in other pages) */
+.mobile-menu-btn {
+    /* ... */
+}
+
+@media (max-width: 768px) {
+    /* ... mobile menu styles ... */
+}

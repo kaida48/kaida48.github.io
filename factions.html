@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factions - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="factions.css">
 </head>
-<body>
+<body class="factions-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,38 @@
         </nav>
     </header>
 
-    <!-- Content for Factions page -->
-    <section class="content">
-        <h1>Factions</h1>
-        <p>Content for the Factions page goes here.</p>
-    </section>
+    <main class="factions-content">
+        <div class="factions-header">
+            <h1>Factions of Project Phoenix</h1>
+            <p>Choose your allegiance and shape the future of the Sunrise Islands.</p>
+        </div>
+
+        <div class="faction-grid">
+            <section class="faction usrf">
+                <h2>USRF (United States Reclamation Force)</h2>
+                <div class="faction-motto">"Order from Chaos"</div>
+                <p>Military faction aiming to secure Project Phoenix to restore pre-war order and stabilize the region under USRF control.</p>
+            </section>
+
+            <section class="faction bandit-gangs">
+                <h2>Bandit Gangs</h2>
+                <div class="faction-motto">"Power through Anarchy"</div>
+                <p>Ruthless groups seeking to use Project Phoenix to establish dominance over the island and enforce their rule through fear and power.</p>
+            </section>
+
+            <section class="faction resistance">
+                <h2>The Resistance</h2>
+                <div class="faction-motto">"Hope and Rebuild"</div>
+                <p>A civilian group fighting for survival, hoping to utilize Project Phoenix to protect their communities and rebuild civilization from the ashes.</p>
+            </section>
+
+            <section class="faction alumni">
+                <h2>The Alumni</h2>
+                <div class="faction-motto">"Knowledge is Power"</div>
+                <p>Tech-savvy group interested in unlocking the technological potential of Project Phoenix to advance humanity's future and ensure their faction's superiority in technology.</p>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +70,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

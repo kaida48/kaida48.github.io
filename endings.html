@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endings - Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="endings.css">
 </head>
-<body>
+<body class="endings-page">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
                 <img src="images/logo.png" alt="Project Phoenix Logo">
             </a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html" aria-label="Home">Home</a></li>
@@ -28,11 +29,38 @@
         </nav>
     </header>
 
-    <!-- Content for Endings page -->
-    <section class="content">
-        <h1>Endings</h1>
-        <p>Content for the Endings page goes here.</p>
-    </section>
+    <main class="endings-content">
+        <div class="endings-header">
+            <h1>Possible Endings</h1>
+            <p>The fate of Project Phoenix lies in your hands</p>
+        </div>
+
+        <div class="endings-grid">
+            <section class="ending unity">
+                <div class="ending-icon">🤝</div>
+                <div class="ending-content">
+                    <h2>Unity</h2>
+                    <p>Factions unite to use Project Phoenix to negotiate peace.</p>
+                </div>
+            </section>
+
+            <section class="ending domination">
+                <div class="ending-icon">🚩</div>
+                <div class="ending-content">
+                    <h2>Domination</h2>
+                    <p>One faction seizes control and uses it to dominate the others.</p>
+                </div>
+            </section>
+
+            <section class="ending destruction">
+                <div class="ending-icon">💥</div>
+                <div class="ending-content">
+                    <h2>Destruction</h2>
+                    <p>The project is destroyed to prevent its misuse, leaving the world to continue its struggle for survival.</p>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>Created by kaida48</p>
@@ -42,5 +70,16 @@
             <a href="#" aria-label="Newsletter">Newsletter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
