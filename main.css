@@ -36,7 +36,10 @@ body {
 }
 
 body.homepage {
-    background-color: #1a1a1a; /* Dark gray */
+    background-color: #191919; /* Dark gray */
+    background-image: url('images/subtle-texture.png');
+    background-repeat: repeat;
+    color: #ffffff;
 }
 
 /* Header */
@@ -196,10 +199,10 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #ff6600; /* Changed background color to #ff6600 */
+    background-color: #000000; /* Changed background color to #000000 */
     color: var(--text-color);
     text-align: center;
-    padding: 10px; /* Make the footer thinner */
+    padding: 20px; /* Make the footer thinner */
     display: flex;
     justify-content: center; /* Center the footer links */
     align-items: center; /* Center items vertically */
@@ -229,6 +232,7 @@ footer p {
 /* Featured Section */
 .featured {
     padding: 40px 20px;
+    background: linear-gradient(to bottom, #191919 0%, #222222 100%);
 }
 
 .feature-grid {
@@ -244,6 +248,7 @@ footer p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .feature:hover {
@@ -360,17 +365,53 @@ footer p {
     .feature-wide {
         grid-column: span 1;
     }
+
+    .feature {
+        height: auto;
+        min-height: 200px;
+    }
+
+    .text-overlay {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7);
+        transform: none;
+    }
+
+    .text-overlay h3,
+    .text-overlay p,
+    .text-overlay .btn {
+        opacity: 1;
+        transform: none;
+    }
+
+    .feature:hover .text-overlay {
+        transform: none;
+    }
+
+    .text-overlay .btn {
+        display: inline-block;
+        margin-top: 10px;
+    }
 }
 
 /* Gradient Section */
 .gradient-section {
     height: 200px; /* Adjust this value to your preference */
     background: linear-gradient(to bottom, #000000 0%, #191919 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Content wrapper for all sections below the gradient */
+.content-wrapper {
+    background: linear-gradient(to bottom, #191919 0%, #222222 100%);
+    position: relative;
+    z-index: 1;
 }
 
 /* Introduction Section */
 .introduction {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     color: var(--text-color);
     padding: 60px 20px;
     text-align: center;
@@ -384,6 +425,7 @@ footer p {
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .introduction .highlight {
@@ -491,6 +533,13 @@ footer p {
     width: 100%;
     height: auto;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    opacity: 0.8; /* Reduce opacity to blend better */
+    mix-blend-mode: screen; /* Blend the image with the background */
+    transition: opacity 0.3s ease;
+}
+
+.cta:hover .cta-image img {
+    opacity: 1; /* Increase opacity on hover */
 }
 
 @media (max-width: 1024px) {
@@ -520,5 +569,58 @@ footer p {
     .cta-btn {
         padding: 12px 24px;
         font-size: 1em;
+    }
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+        display: none;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.9); /* Add background color */
+        padding: 20px 0; /* Add padding */
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    header nav.active {
+        display: block;
+        max-height: 500px; /* Adjust this value based on your menu's height */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%; /* Make list items full width */
+        text-align: center; /* Center text */
+    }
+
+    header nav ul li a {
+        display: block; /* Make links block-level */
+        padding: 10px 0; /* Add padding to links */
+    }
+
+    .mobile-menu-btn {
+        display: block;
     }
 }

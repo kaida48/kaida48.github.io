@@ -113,6 +113,55 @@ header nav ul li a:hover {
     border-radius: 5px; /* Add border radius */
 }
 
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+        display: none;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+    }
+
+    header nav.active {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
 /* Join Hero Section */
 .hero.join-hero {
     position: relative;
