@@ -103,8 +103,12 @@ header nav ul li a:hover {
 }
 
 /* Rules Page Content */
+.rules-page .hero {
+    background-image: url('images/featured/rules.jpg');
+}
+
 .rules-content {
-    padding: 80px 20px;
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -112,136 +116,192 @@ header nav ul li a:hover {
 .rules-header {
     text-align: center;
     margin-bottom: 40px;
-    background-color: rgba(255, 123, 0, 0.1);
-    padding: 20px;
+    background-color: rgba(255, 102, 0, 0.1);
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .rules-header h1 {
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 3em;
-    color: #ff7b00;
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .rules-header p {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
     font-size: 1.2em;
-    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
 }
 
 .rules-navigation {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
+    gap: 15px;
+    margin-bottom: 50px;
 }
 
 .nav-button {
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     border-radius: 5px;
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-button:hover {
     background-color: var(--hover-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .rule-section {
     background-color: rgba(42, 42, 42, 0.7);
     border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rule-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .rule-section h2 {
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 2.5em;
-    color: #ff7b00;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ff7b00;
-    padding-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.rule-section .rule-content {
+.rule-content {
     font-family: 'CustomFontRegular', Arial, sans-serif;
     font-size: 1.1em;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-.rule-section .rule-content p {
-    margin-bottom: 20px;
-}
-
-.rule-section .rule-content ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.rule-section .rule-content ul li {
-    margin-bottom: 10px;
-}
-
-.rule-section .rule-content ol {
-    list-style: decimal;
-    padding-left: 20px;
-}
-
-.rule-section .rule-content ol li {
-    margin-bottom: 10px;
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
 .prohibited-actions, .dictionary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .action-card, .dictionary-item {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .action-card:hover, .dictionary-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.action-card h4 {
+.action-card h4, .dictionary-item strong {
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 1.5em;
-    color: #ff7b00;
-    margin-bottom: 10px;
-}
-
-.action-card p {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1.1em;
-    color: #ffffff;
-}
-
-.dictionary-item strong {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 1.2em;
-    color: #ff7b00;
+    color: var(--primary-color);
+    margin-bottom: 15px;
     display: block;
-    margin-bottom: 10px;
 }
 
-.dictionary-item p {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1.1em;
-    color: #ffffff;
+.action-card p, .dictionary-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Add some visual separators */
+.rule-section:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin-top: 50px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .rules-header h1 {
+        font-size: 2.5em;
+    }
+
+    .rule-section h2 {
+        font-size: 2em;
+    }
+
+    .prohibited-actions, .dictionary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rule-section {
+        padding: 30px;
+    }
+}
+
+/* Foreword section */
+.rule-section.foreword {
+    background-color: rgba(255, 102, 0, 0.15);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.rule-section.foreword::before {
+    content: '!';
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 150px;
+    color: rgba(255, 102, 0, 0.1);
+    z-index: 0;
+}
+
+.rule-section.foreword h2 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.rule-section.foreword .rule-content {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.rule-section.foreword::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+    z-index: 0;
 }
 
 /* Footer */

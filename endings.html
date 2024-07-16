@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endings - Project Phoenix Roleplay Wiki</title>
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="endings.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 </head>
-<body class="endings-page">
+<body class="endings-page no-js">
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Home">
@@ -29,55 +32,411 @@
         </nav>
     </header>
 
-    <main class="endings-content">
-        <div class="endings-header">
-            <h1>Possible Endings</h1>
-            <p>The fate of Project Phoenix lies in your hands</p>
+    <section class="hero parallax-bg">
+        <div class="overlay">
+            <h1 class="glow-text">Possible Endings</h1>
+            <p class="fade-in-text">The fate of Project Phoenix lies in your hands</p>
         </div>
+    </section>
 
-        <div class="endings-grid">
-            <section class="ending unity">
-                <div class="ending-icon">🤝</div>
-                <div class="ending-content">
-                    <h2>Unity</h2>
-                    <p>Factions unite to use Project Phoenix to negotiate peace.</p>
+    <div class="content-wrapper">
+        <main class="endings-content">
+            <section class="intro fade-in-element">
+                <h2 class="glow-text">Shape the Future</h2>
+                <p class="fade-in">In Project Phoenix, your choices and actions will ultimately lead to one of several possible endings. Each ending represents a different fate for the Sunrise Islands and potentially the entire world.</p>
+            </section>
+
+            <div class="endings-showcase">
+                <div class="ending-card unity fade-in-element" data-ending="unity">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2>Unity</h2>
+                            <div class="ending-icon">🤝</div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Unity</h3>
+                            <p>Factions unite to use Project Phoenix for peace and reconstruction.</p>
+                            <ul class="ending-details">
+                                <li>Collaborative effort to rebuild society</li>
+                                <li>Technological advancements benefit all</li>
+                                <li>Challenges in maintaining peace among former rivals</li>
+                            </ul>
+                            <div class="ending-quote">"Together, we rise from the ashes."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ending-card domination fade-in-element" data-ending="domination">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2>Domination</h2>
+                            <div class="ending-icon">🚩</div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Domination</h3>
+                            <p>One faction seizes control and uses Project Phoenix to dominate others.</p>
+                            <ul class="ending-details">
+                                <li>Strict authoritarian rule</li>
+                                <li>Rapid technological progress at a cost</li>
+                                <li>Resistance movements form in the shadows</li>
+                            </ul>
+                            <div class="ending-quote">"Order through strength, progress through control."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ending-card destruction fade-in-element" data-ending="destruction">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h2>Destruction</h2>
+                            <div class="ending-icon">💥</div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Destruction</h3>
+                            <p>Project Phoenix is destroyed, leaving the world to continue its struggle.</p>
+                            <ul class="ending-details">
+                                <li>Prevents potential misuse of powerful technology</li>
+                                <li>Ongoing conflicts between factions</li>
+                                <li>Hope for a natural path to recovery</li>
+                            </ul>
+                            <div class="ending-quote">"Sometimes, the old must remain buried for the new to grow."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="player-impact fade-in-element">
+                <h2 class="glow-text">Your Impact on the Ending</h2>
+                <p>The choices you make throughout your journey in Project Phoenix will influence which ending becomes reality. Consider the following factors:</p>
+                <ul>
+                    <li>Alliances formed with different factions</li>
+                    <li>Key decisions made during crucial events</li>
+                    <li>Your character's personal motivations and ethics</li>
+                    <li>The way you interact with other players and NPCs</li>
+                </ul>
+                <p>Remember, the path to each ending is not set in stone. Your actions can sway the course of history in unexpected ways!</p>
+            </section>
+
+            <section class="ending-simulator fade-in-element">
+                <h2 class="glow-text">Ending Simulator</h2>
+                <p>Shape the future of the Sunrise Islands through your choices</p>
+                <div class="simulator-progress">
+                    <div class="progress-bar"></div>
+                    <p>Decision <span id="current-question">1</span> of <span id="total-questions">5</span></p>
+                </div>
+                <div id="question-container" class="question-container">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+                <div class="simulator-result" style="display: none;">
+                    <div class="result-header">
+                        <h3 class="glow-text">Your Destiny Unfolds</h3>
+                        <div class="result-orb">
+                            <span id="result-ending">Unknown</span>
+                        </div>
+                    </div>
+                    <p id="result-description" class="result-description"></p>
+                    <div class="ending-breakdown">
+                        <h4>Path Analysis</h4>
+                        <div class="ending-bar unity" data-ending="Unity">
+                            <div class="bar-fill"></div>
+                            <span class="bar-label">Unity: <span class="bar-percentage">0%</span></span>
+                        </div>
+                        <div class="ending-bar domination" data-ending="Domination">
+                            <div class="bar-fill"></div>
+                            <span class="bar-label">Domination: <span class="bar-percentage">0%</span></span>
+                        </div>
+                        <div class="ending-bar destruction" data-ending="Destruction">
+                            <div class="bar-fill"></div>
+                            <span class="bar-label">Destruction: <span class="bar-percentage">0%</span></span>
+                        </div>
+                    </div>
+                    <div class="key-decisions">
+                        <h4>Key Decisions</h4>
+                        <ul id="decision-list"></ul>
+                    </div>
+                    <div class="result-actions">
+                        <button id="restart-sim" class="neon-button">Reshape Destiny</button>
+                    </div>
                 </div>
             </section>
 
-            <section class="ending domination">
-                <div class="ending-icon">🚩</div>
-                <div class="ending-content">
-                    <h2>Domination</h2>
-                    <p>One faction seizes control and uses it to dominate the others.</p>
+            <section class="ending-implications fade-in-element">
+                <h2 class="glow-text">Long-Term Implications</h2>
+                <div class="implication-cards">
+                    <div class="implication-card" data-aos="fade-up">
+                        <h3>Society</h3>
+                        <p>How will the social structure of the Sunrise Islands change? Will there be equality or a new hierarchy?</p>
+                    </div>
+                    <div class="implication-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Technology</h3>
+                        <p>Will Project Phoenix lead to a new age of innovation or will its destruction set progress back?</p>
+                    </div>
+                    <div class="implication-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Environment</h3>
+                        <p>Can the radiation be reversed? How will the local ecosystem adapt to the changes?</p>
+                    </div>
+                    <div class="implication-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Global Impact</h3>
+                        <p>How will the outcome on the Sunrise Islands affect the rest of the post-apocalyptic world?</p>
+                    </div>
                 </div>
             </section>
+        </main>
 
-            <section class="ending destruction">
-                <div class="ending-icon">💥</div>
-                <div class="ending-content">
-                    <h2>Destruction</h2>
-                    <p>The project is destroyed to prevent its misuse, leaving the world to continue its struggle for survival.</p>
-                </div>
-            </section>
-        </div>
-    </main>
+        <footer>
+            <p>Created by kaida48</p>
+            <div class="footer-links">
+                <a href="#" aria-label="Contact">Contact</a>
+                <a href="#" aria-label="Social Media">Social Media</a>
+                <a href="#" aria-label="Newsletter">Newsletter</a>
+            </div>
+        </footer>
+    </div>
 
-    <footer>
-        <p>Created by kaida48</p>
-        <div class="footer-links">
-            <a href="#" aria-label="Contact">Contact</a>
-            <a href="#" aria-label="Social Media">Social Media</a>
-            <a href="#" aria-label="Newsletter">Newsletter</a>
-        </div>
-    </footer>
+    <div class="gradient-bottom"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Remove 'no-js' class to indicate JavaScript is working
+            document.body.classList.remove('no-js');
+
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('nav');
 
             mobileMenuBtn.addEventListener('click', function() {
                 nav.classList.toggle('active');
+            });
+
+            const questions = [
+                {
+                    question: "How do you approach conflicts between factions?",
+                    choices: [
+                        { text: "Mediate and find common ground", impact: "unity" },
+                        { text: "Support the strongest faction", impact: "domination" },
+                        { text: "Encourage conflict to weaken all sides", impact: "destruction" }
+                    ]
+                },
+                {
+                    question: "What's your stance on Project Phoenix technology?",
+                    choices: [
+                        { text: "Share it equally among all factions", impact: "unity" },
+                        { text: "Keep it for your faction's advantage", impact: "domination" },
+                        { text: "Destroy it to prevent misuse", impact: "destruction" }
+                    ]
+                },
+                {
+                    question: "How do you deal with dissenting opinions?",
+                    choices: [
+                        { text: "Listen and incorporate diverse viewpoints", impact: "unity" },
+                        { text: "Silence opposition to maintain order", impact: "domination" },
+                        { text: "Let chaos reign to expose flaws in the system", impact: "destruction" }
+                    ]
+                },
+                {
+                    question: "What's your approach to resource distribution?",
+                    choices: [
+                        { text: "Establish a fair system for all", impact: "unity" },
+                        { text: "Prioritize your allies and supporters", impact: "domination" },
+                        { text: "Disrupt supply chains to force change", impact: "destruction" }
+                    ]
+                },
+                {
+                    question: "How do you view the future of the Sunrise Islands?",
+                    choices: [
+                        { text: "A collaborative haven of innovation", impact: "unity" },
+                        { text: "A powerful base for expanding influence", impact: "domination" },
+                        { text: "A clean slate after total reconstruction", impact: "destruction" }
+                    ]
+                }
+            ];
+
+            let currentQuestion = 0;
+            let choiceImpacts = { unity: 0, domination: 0, destruction: 0 };
+
+            const questionContainer = document.getElementById('question-container');
+            const resultSection = document.querySelector('.simulator-result');
+            const progressBar = document.querySelector('.progress-bar');
+            const currentQuestionSpan = document.getElementById('current-question');
+            const totalQuestionsSpan = document.getElementById('total-questions');
+            const resultEnding = document.getElementById('result-ending');
+            const resultDescription = document.getElementById('result-description');
+            const restartButton = document.getElementById('restart-sim');
+
+            totalQuestionsSpan.textContent = questions.length;
+
+            function displayQuestion() {
+                const question = questions[currentQuestion];
+                let html = `<h3>${question.question}</h3>`;
+                question.choices.forEach((choice, index) => {
+                    html += `<button class="choice-btn" data-impact="${choice.impact}">${choice.text}</button>`;
+                });
+                questionContainer.innerHTML = html;
+
+                document.querySelectorAll('.choice-btn').forEach(button => {
+                    button.addEventListener('click', handleChoice);
+                });
+            }
+
+            function handleChoice(event) {
+                const impact = event.target.getAttribute('data-impact');
+                choiceImpacts[impact]++;
+                currentQuestion++;
+
+                if (currentQuestion < questions.length) {
+                    displayQuestion();
+                    updateProgress();
+                } else {
+                    showResult();
+                }
+            }
+
+            function updateProgress() {
+                const progress = (currentQuestion / questions.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                currentQuestionSpan.textContent = currentQuestion + 1;
+            }
+
+            function showResult() {
+                questionContainer.style.display = 'none';
+                resultSection.style.display = 'block';
+
+                setTimeout(() => {
+                    resultSection.classList.add('show');
+                }, 100);
+
+                const totalChoices = Object.values(choiceImpacts).reduce((a, b) => a + b, 0);
+                const likelyEnding = Object.keys(choiceImpacts).reduce((a, b) => choiceImpacts[a] > choiceImpacts[b] ? a : b);
+
+                resultEnding.textContent = likelyEnding.charAt(0).toUpperCase() + likelyEnding.slice(1);
+                
+                const descriptions = {
+                    unity: "You've chosen a path of collaboration and mutual understanding. The factions are coming together to build a brighter future for all. Project Phoenix becomes a symbol of hope and cooperation, ushering in a new era of peace and technological advancement for the Sunrise Islands.",
+                    domination: "Your decisions have led to a strong, centralized power. One faction now controls Project Phoenix, for better or worse. The Sunrise Islands enter a period of rapid progress, but at the cost of individual freedoms. The future remains uncertain as resistance movements form in the shadows.",
+                    destruction: "Your actions have resulted in the downfall of Project Phoenix. The old world burns away, leaving room for a new beginning. The Sunrise Islands face a challenging period of rebuilding, but free from the dangers of misused advanced technology. The future is unwritten, full of both peril and possibility."
+                };
+                resultDescription.textContent = descriptions[likelyEnding];
+
+                document.querySelectorAll('.ending-bar').forEach(bar => {
+                    const ending = bar.getAttribute('data-ending').toLowerCase();
+                    const percentage = (choiceImpacts[ending] / totalChoices) * 100;
+                    setTimeout(() => {
+                        bar.querySelector('.bar-fill').style.width = `${percentage}%`;
+                        bar.querySelector('.bar-percentage').textContent = `${Math.round(percentage)}%`;
+                    }, 200);
+                });
+
+                const decisionList = document.getElementById('decision-list');
+                decisionList.innerHTML = '';
+                questions.forEach((question, index) => {
+                    const choice = question.choices.find(c => c.impact === Object.keys(choiceImpacts).reduce((a, b) => choiceImpacts[a] > choiceImpacts[b] ? a : b));
+                    const li = document.createElement('li');
+                    li.textContent = `Q${index + 1}: ${choice.text}`;
+                    decisionList.appendChild(li);
+                });
+
+                document.querySelectorAll('.ending').forEach(section => {
+                    section.classList.remove('highlighted');
+                });
+                document.querySelector(`.ending[data-ending="${likelyEnding}"]`).classList.add('highlighted');
+            }
+
+            restartButton.addEventListener('click', () => {
+                resultSection.classList.remove('show');
+                setTimeout(() => {
+                    currentQuestion = 0;
+                    choiceImpacts = { unity: 0, domination: 0, destruction: 0 };
+                    questionContainer.style.display = 'block';
+                    resultSection.style.display = 'none';
+                    displayQuestion();
+                    updateProgress();
+                }, 300);
+            });
+
+            displayQuestion();
+
+            // Function to handle fade-in animations
+            function handleFadeInAnimations() {
+                const fadeElements = document.querySelectorAll('.fade-in-element');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                fadeElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+
+            // Call the function to initialize fade-in animations
+            handleFadeInAnimations();
+
+            // GSAP animations for hero section
+            gsap.from('.hero h1', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero p', {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 0.5
+            });
+
+            // Parallax effect for hero background
+            gsap.to('.parallax-bg', {
+                backgroundPosition: "50% 100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.parallax-bg',
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            // Fade-in and slide-up animation for ending cards
+            gsap.utils.toArray('.ending-card').forEach((card, index) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 50,
+                    rotation: -5,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    delay: index * 0.2
+                });
+            });
+
+            // Fade-in and slide-up animation for implication cards
+            gsap.utils.toArray('.implication-card').forEach((card, index) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    delay: index * 0.1
+                });
             });
         });
     </script>

@@ -155,53 +155,52 @@ header nav ul li a:hover {
 
 /* Factions content styles */
 .factions-content {
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px 80px;
-}
-
-.factions-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.factions-header h1 {
-    font-size: 3em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.factions-header p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .faction-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .faction {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(42, 42, 42, 0.7);
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.faction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transition: height 0.3s ease;
 }
 
 .faction:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.faction:hover::before {
+    height: 10px;
 }
 
 .faction h2 {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
     font-size: 1.8em;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -209,19 +208,22 @@ header nav ul li a:hover {
     font-style: italic;
     font-size: 1.2em;
     color: #cccccc;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .faction p {
-    font-size: 1em;
+    font-family: 'CustomFontRegular', Arial, sans-serif;
+    font-size: 1.1em;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 /* Unique colors for each faction */
-.usrf { border-left: 5px solid #0066cc; }
-.bandit-gangs { border-left: 5px solid #cc0000; }
-.resistance { border-left: 5px solid #00cc66; }
-.alumni { border-left: 5px solid #cc00cc; }
+.usrf::before { background-color: #0066cc; }
+.bandit-gangs::before { background-color: #cc0000; }
+.resistance::before { background-color: #00cc66; }
+.alumni::before { background-color: #cc00cc; }
 
 /* Footer styles (same as in other pages) */
 footer {
@@ -230,12 +232,16 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .factions-header h1 {
-        font-size: 2.5em;
-    }
-
     .faction-grid {
         grid-template-columns: 1fr;
+    }
+
+    .faction {
+        padding: 25px;
+    }
+
+    .faction h2 {
+        font-size: 1.6em;
     }
 }
 

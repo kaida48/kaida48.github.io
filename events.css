@@ -324,3 +324,130 @@ footer p {
         margin-right: 0 !important;
     }
 }
+
+/* Keep only event-specific styles in this file */
+
+.events-page .hero {
+    background-image: url('images/featured/events.jpg');
+}
+
+.events-content {
+    padding: 60px 20px;
+}
+
+.event-timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.event-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+.event {
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.event:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.event-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+.event-content {
+    width: calc(50% - 40px);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event:nth-child(odd) .event-content {
+    margin-right: 20px;
+}
+
+.event:nth-child(even) .event-content {
+    margin-left: 20px;
+}
+
+.event-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event h2 {
+    font-family: 'MonaspaceKrypton', Arial, sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.event p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.event-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Unique colors for each event */
+.event:nth-child(1) .event-icon { background-color: #4CAF50; }
+.event:nth-child(2) .event-icon { background-color: #F44336; }
+.event:nth-child(3) .event-icon { background-color: #2196F3; }
+.event:nth-child(4) .event-icon { background-color: #FFC107; }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .event-timeline::before {
+        left: 30px;
+    }
+
+    .event {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 30px;
+    }
+
+    .event:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .event-icon {
+        position: absolute;
+        left: -45px;
+        top: 0;
+    }
+
+    .event-content {
+        width: calc(100% - 60px);
+        margin-left: 30px !important;
+        margin-right: 0 !important;
+    }
+}
