@@ -54,7 +54,7 @@ body.join-page::before {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    right: 25;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
     z-index: -1;

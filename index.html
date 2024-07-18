@@ -4,166 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Phoenix Roleplay Wiki</title>
-    <link rel="stylesheet" href="main.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="homepage">
+<body>
     <header>
-        <div class="logo">
-            <a href="index.html" aria-label="Home">
-                <img src="images/logo.png" alt="Project Phoenix Logo">
-            </a>
-        </div>
-        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
-        <nav>
-            <ul>
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="join.html" aria-label="Join Now">Join Now</a></li>
-                <li><a href="setting.html" aria-label="Setting">Setting</a></li>
-                <li><a href="plot.html" aria-label="Plot">Plot</a></li>
-                <li><a href="factions.html" aria-label="Factions">Factions</a></li>
-                <li><a href="key-locations.html" aria-label="Key Locations">Key Locations</a></li>
-                <li><a href="events.html" aria-label="Events">Events</a></li>
-                <li><a href="endings.html" aria-label="Endings">Endings</a></li>
-                <li><a href="rules.html" aria-label="Rules">Rules</a></li>
+        <!-- Main navigation bar -->
+        <nav class="navbar">
+            <!-- Logo and site title -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Project Phoenix Logo">
+                    <span class="logo-text">Project-Phoenix</span>
+                </a>
+            </div>
+            <!-- Mobile menu icon (three horizontal lines) -->
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Navigation links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="setting.html">Setting</a></li>
+                <li><a href="plot.html">Plot</a></li>
+                <li><a href="factions.html">Factions</a></li>
+                <li><a href="key-locations.html">Key Locations</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="endings.html">Possible Endings</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="characters.html">Active Characters</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="overlay">
-            <h1>Project-Phoenix</h1>
-            <p>Immerse yourself in a new roleplay experience</p>
-            <a href="join.html" class="hero-btn" aria-label="Join Now">JOIN NOW</a>
-        </div>
-    </section>
-
-    <section class="gradient-section" style="background: linear-gradient(to bottom, #000000 0%, #191919 100%); height: 200px;">
-        <div class="particles">
-            <div class="particle" style="left: 10%; top: 20%; width: 8px; height: 8px;"></div>
-            <div class="particle" style="left: 25%; top: 60%; width: 12px; height: 12px;"></div>
-            <div class="particle" style="left: 40%; top: 40%; width: 6px; height: 6px;"></div>
-            <div class="particle" style="left: 65%; top: 70%; width: 10px; height: 10px;"></div>
-            <div class="particle" style="left: 80%; top: 30%; width: 7px; height: 7px;"></div>
-        </div>
-    </section>
-
-    <div class="content-wrapper">
-        <section class="introduction">
-            <h2>Welcome to <span class="highlight">Project-Phoenix</span></h2>
-            <p>Immerse yourself in a post-apocalyptic world where survival is key and every decision matters. Our roleplay server offers a unique blend of storytelling, strategy, and community interaction. Engage in thrilling plots, join dynamic factions, explore mysterious locations, and participate in epic events that shape the future of this ravaged world.</p>
-            <p>Whether you're a seasoned roleplayer or new to the genre, Project-Phoenix provides an immersive experience that will challenge your creativity and decision-making skills. Are you ready to rise from the ashes and forge your own destiny?</p>
-            <a href="join.html" class="btn" aria-label="Start Your Journey">Start Your Journey</a>
-        </section>
-
-        <section class="featured">
-            <div class="feature-grid">
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/setting.jpg" alt="Setting">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Setting</h3>
-                            <p>Explore the unique setting of Project Phoenix.</p>
-                            <a href="setting.html" class="btn" aria-label="Learn more about Setting">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/plot.jpg" alt="Plot">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Plot</h3>
-                            <p>Delve into the intricate plot of our roleplay server.</p>
-                            <a href="plot.html" class="btn" aria-label="Learn more about Plot">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/factions.jpg" alt="Factions">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Factions</h3>
-                            <p>Join one of the dynamic factions.</p>
-                            <a href="factions.html" class="btn" aria-label="Learn more about Factions">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/key-locations.jpg" alt="Key Locations">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Key Locations</h3>
-                            <p>Visit the key locations in our world.</p>
-                            <a href="key-locations.html" class="btn" aria-label="Learn more about Key Locations">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/events.jpg" alt="Events">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Events</h3>
-                            <p>Participate in epic events.</p>
-                            <a href="events.html" class="btn" aria-label="Learn more about Events">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature">
-                    <div class="image-container">
-                        <img src="images/featured/endings.jpg" alt="Endings">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Endings</h3>
-                            <p>Discover the different endings.</p>
-                            <a href="endings.html" class="btn" aria-label="Learn more about Endings">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature feature-wide">
-                    <div class="image-container">
-                        <img src="images/featured/rules.jpg" alt="Rules">
-                        <div class="image-overlay"></div>
-                        <div class="text-overlay">
-                            <h3>Rules</h3>
-                            <p>Learn about the rules of our roleplay server. Essential for all survivors in the wasteland.</p>
-                            <a href="rules.html" class="btn" aria-label="Learn more about Rules">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <div class="cta-content">
-                <h2>Forge Your Legacy in the Wasteland</h2>
-                <p>The world has changed. Will you rise from the ashes and shape its future?</p>
-                <a href="join.html" class="cta-btn" aria-label="Join Now">Join the Rebellion</a>
-            </div>
-            <div class="cta-image">
-                <img src="images/cta-character.jpg" alt="Post-apocalyptic character">
-            </div>
-        </section>
-
-        <footer>
-            <p>Created by kaida48</p>
-            <div class="footer-links">
-                <a href="#" aria-label="Contact">Contact</a>
-                <a href="#" aria-label="Social Media">Social Media</a>
-                <a href="#" aria-label="Newsletter">Newsletter</a>
-            </div>
-        </footer>
-    </div>
-
-    <div class="gradient-bottom"></div>
-
+    <!-- JavaScript for mobile menu toggle -->
     <script>
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('header nav').classList.toggle('active');
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
+    </script>
+
+    <main>
+        <!-- Hero section with typewriter effect -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="typewriter"></h1>
+                <p class="subtext">Explore the post-apocalyptic world of Project Phoenix</p>
+                <div class="button-container">
+                    <a href="join.html" class="join-button">Join Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gradient transition between hero and about sections -->
+        <section class="gradient-transition"></section>
+
+        <!-- About section -->
+        <section class="about-section fade-in">
+            <div class="about-container">
+                <h2 class="about-header">What is Project-Phoenix?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+                        
+                        <p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum.</p>
+                        
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section fade-in">
+            <div class="cta-container">
+                <div class="floating-circles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2 class="cta-header">Join the Rebellion</h2>
+                <p class="cta-subtext">Become part of Project-Phoenix and shape the post-apocalyptic world!</p>
+                <a href="join.html" class="cta-button">
+                    <span class="button-text">Enter the Wasteland</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Add any other sections here -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="copyright">
+                &copy; 2023 Project-Phoenix. All rights reserved.
+            </div>
+            <div class="credits">
+                Made with love by Kaida <3
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="setting.html">Setting</a>
+                <a href="plot.html">Plot</a>
+                <a href="factions.html">Factions</a>
+                <a href="key-locations.html">Key Locations</a>
+                <a href="events.html">Events</a>
+                <a href="endings.html">Possible Endings</a>
+                <a href="rules.html">Rules</a>
+                <a href="join.html">Join Us</a>
+                <a href="characters.html">Active Characters</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript for typewriter effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typewriter effect
+            const text = "Project-Phoenix";
+            const speed = 100; // milliseconds per character
+            let i = 0;
+            const typewriter = document.querySelector('.typewriter');
+            const subtext = document.querySelector('.subtext');
+            const joinButton = document.querySelector('.join-button');
+
+            function typeWriter() {
+                if (i < text.length) {
+                    typewriter.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    // Fade in subtext and join button after typewriter effect
+                    setTimeout(() => {
+                        subtext.classList.add('fade-in');
+                        setTimeout(() => {
+                            joinButton.classList.add('fly-in');
+                        }, 500);
+                    }, 500);
+                }
+            }
+
+            typeWriter();
+        });
+    </script>
+
+    <!-- Script to scroll to top on page reload -->
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+    <!-- Script for fade-in effect on scroll -->
+    <script>
+        function debounce(func, wait = 10, immediate = true) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        function checkFade() {
+            fadeInElements.forEach(element => {
+                const triggerPoint = window.innerHeight / 5 * 4;
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < triggerPoint) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', debounce(checkFade));
+        window.addEventListener('load', checkFade);
     </script>
 </body>
 </html>

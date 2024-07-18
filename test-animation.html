@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .animated-bg-wrapper {
+            position: relative;
+            background-color: #1a1a1a;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .animated-bg-wrapper::before,
+        .animated-bg-wrapper::after {
+            content: "";
+            position: absolute;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: #1a1a1a;
+            background-image: 
+                radial-gradient(circle, #ff0000 2%, transparent 2%),
+                radial-gradient(circle, #ff0000 2%, transparent 2%);
+            background-position: 0 0, 25px 25px;
+            background-size: 50px 50px;
+            opacity: 1;
+            animation: bgMove 10s linear infinite;
+        }
+
