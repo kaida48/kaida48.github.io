@@ -5,9 +5,6 @@
     --secondary-color: #1a1a1a;
     --text-color: #ffffff;
     --background-color: #000000;
-    --input-bg: #2a2a2a;
-    --input-border: #444444;
-    --input-focus: #80bdff;
 }
 
 body {
@@ -19,183 +16,27 @@ body {
     padding: 0;
 }
 
-.form-all {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.form-section {
-    display: none;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 4px;
-    border-left: 3px solid var(--primary-color);
-}
-
-.form-section.active {
-    display: block;
-}
-
-.form-section h2 {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.form-line {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    color: var(--text-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.form-textbox, .form-textarea, .form-dropdown {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--input-bg);
-    color: var(--text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-textbox:focus, .form-textarea:focus, .form-dropdown:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(230, 26, 47, 0.2);
-    outline: none;
-}
-
-.form-submit-button, .form-nav-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    display: inline-block;
-}
-
-.form-submit-button.active {
-    display: inline-block;
-}
-
-.form-submit-button:hover, .form-nav-button:hover {
-    background-color: #ff3d4f;
-}
-
-.form-submit-button:active, .form-nav-button:active {
-    transform: translateY(1px);
-}
-
-.form-nav-button.back {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-}
-
-.form-nav-button.back:hover {
-  background-color: #2a2a2a;
-}
-
-.form-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.cyberpunk-form input[type="radio"], .cyberpunk-form input[type="checkbox"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--input-border);
-    background-color: var(--input-bg);
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-.cyberpunk-form input[type="radio"]:checked::before, .cyberpunk-form input[type="checkbox"]:checked::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-}
-
-.cyberpunk-form input[type="checkbox"] {
-    border-radius: 3px;
-}
-
-.cyberpunk-form input[type="checkbox"]:checked::before {
-    border-radius: 1px;
-}
-
-.form-description {
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 0.25rem;
-}
-
 @media (max-width: 768px) {
-    .form-all {
-        padding: 1rem;
-    }
+    /* Mobile styles if needed */
 }
 
-#id_28 .form-input {
-    display: flex;
-    gap: 1rem;
+/* Add any custom styles for the integrated form here */
+#form-container {
+    /* Adjust these styles as needed */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
-#id_28 .form-input input {
-    flex: 1;
+/* You may need to override some of the form's default styles */
+#form-container input,
+#form-container textarea,
+#form-container select {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333;
 }
 
-#id_7 .form-multiple-column {
-    display: flex;
-    gap: 1rem;
-}
-
-.form-required {
-    color: var(--primary-color);
-    margin-left: 0.25rem;
-}
-
-.form-sub-label {
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 0.25rem;
-    display: block;
-}
-
-fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-legend {
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
+/* Add more custom styles as needed */
