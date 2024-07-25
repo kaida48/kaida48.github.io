@@ -3,162 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Now - Project Phoenix Roleplay Wiki</title>
+    <title>Join Us - Project Phoenix</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="join.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body class="join-page">
+<body>
     <header>
-        <div class="logo">
-            <a href="index.html" aria-label="Home">
-                <img src="images/logo.png" alt="Project Phoenix Logo">
-            </a>
-        </div>
-        <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
-        <nav>
-            <ul>
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="join.html" aria-label="Join Now">Join Now</a></li>
-                <li><a href="setting.html" aria-label="Setting">Setting</a></li>
-                <li><a href="plot.html" aria-label="Plot">Plot</a></li>
-                <li><a href="factions.html" aria-label="Factions">Factions</a></li>
-                <li><a href="key-locations.html" aria-label="Key Locations">Key Locations</a></li>
-                <li><a href="events.html" aria-label="Events">Events</a></li>
-                <li><a href="endings.html" aria-label="Endings">Endings</a></li>
-                <li><a href="rules.html" aria-label="Rules">Rules</a></li>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Project Phoenix Logo">
+                    <span class="logo-text">Project-Phoenix</span>
+                </a>
+            </div>
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="world.html">World</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="join.html" class="active">Join Us</a></li>
+                <li><a href="characters.html">Active Characters</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero join-hero">
-        <div class="overlay">
-            <h1 class="join-title">How to Join</h1>
-            <div style="height: 20px;"></div> <!-- Added empty space -->
-            <a href="https://discord.gg/rubRkdX95k" class="join-btn" aria-label="Join Discord">
-                <img src="images/discord.png" alt="Discord" class="btn-icon"> Join Discord
-            </a>
-        </div>
-    </section>
-
-    <section class="join-steps">
-        <h2>How to Join Project Phoenix Roleplay</h2>
-        
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-image-container">
-                        <img src="images/step1.jpg" alt="Step 1: Join Discord" class="step-image">
-                        <div class="expand-icon">+</div>
-                    </div>
-                    <div class="step-text">
-                        <h3>Step 1: Join Our Discord Server</h3>
-                        <p>Click the "Join Discord" button above to enter our community. Once there, Head to channels and roles and get yourself the After the Flash role to access its channels.</p>
-                    </div>
-                </div>
-                <div class="step-number">1</div>
+    <main class="post-apocalyptic-form">
+        <section class="join-hero">
+            <div class="join-hero-content">
+                <h1 class="glitch-text">Join Project Phoenix</h1>
+                <p class="neon-text">Become part of our community and help shape the future of our post-apocalyptic world.</p>
             </div>
+        </section>
 
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-image-container">
-                        <img src="images/step2.jpg" alt="Step 2: Read the Rules" class="step-image">
-                        <div class="expand-icon">+</div>
-                    </div>
-                    <div class="step-text">
-                        <h3>Step 2: Read the Rules and Lore</h3>
-                        <p>Familiarize yourself with our community guidelines and the rich backstory of Project Phoenix on our website.</p>
-                    </div>
+        <section class="join-steps">
+            <h2>How to Join</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Join our Discord</h3>
+                    <p>Connect with our community on Discord.</p>
+                    <a href="https://discord.gg/rubRkdX95k" class="step-link" target="_blank">Join Server</a>
                 </div>
-                <div class="step-number">2</div>
-            </div>
-
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-image-container">
-                        <img src="images/step3.jpg" alt="Step 3: Create Your Character" class="step-image">
-                        <div class="expand-icon">+</div>
-                    </div>
-                    <div class="step-text">
-                        <h3>Step 3: Create Your Character</h3>
-                        <p>Use the character template in our Discord server to design your unique persona. Head to the official After the Flash game to stylize that persona in the game. Our moderators will guide you through the process if help is needed.</p>
-                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Read Rules and Lore</h3>
+                    <p>Familiarize yourself with our guidelines and world.</p>
                 </div>
-                <div class="step-number">3</div>
-            </div>
-
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-image-container">
-                        <img src="images/step4.jpg" alt="Step 4: Get Approved" class="step-image">
-                        <div class="expand-icon">+</div>
-                    </div>
-                    <div class="step-text">
-                        <h3>Step 4: Get Your Character Approved</h3>
-                        <p>Submit your character for approval in the #character-approval channel. Once approved, our team will assign your character to a faction that makes the most sense for your character and the plot.</p>
-                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Create Your Character</h3>
+                    <p>Submit your character using the form below.</p>
                 </div>
-                <div class="step-number">4</div>
-            </div>
-
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-image-container">
-                        <img src="images/step5.jpg" alt="Step 5: Start Roleplaying" class="step-image">
-                        <div class="expand-icon">+</div>
-                    </div>
-                    <div class="step-text">
-                        <h3>Step 5: Jump Into the Action</h3>
-                        <p>Wait for a roleplay session to start in the #events channel and start your adventure in the post-apocalyptic world of Project Phoenix!</p>
-                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Wait for Roleplay</h3>
+                    <p>Be ready to join when a new roleplay begins.</p>
                 </div>
-                <div class="step-number">5</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="expandedImg">
-    </div>
+        <section class="application-form" id="join-form">
+            <h2 class="form-title">Join the Adventure</h2>
+            <form class="jotform-form cyberpunk-form" action="https://eu-submit.jotform.com/submit/242056625768060" method="post" name="form_242056625768060" id="242056625768060" accept-charset="utf-8" autocomplete="on">
+                <input type="hidden" name="formID" value="242056625768060" />
+                <input type="hidden" id="JWTContainer" value="" />
+                <input type="hidden" id="cardinalOrderNumber" value="" />
+                <input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="build-date-1721863160204" />
+                <input type="hidden" id="submitSource" name="submitSource" value="unknown" />
+                <input type="hidden" id="buildDate" name="buildDate" value="1721863160204" />
+                <div id="formCoverLogo" style="margin-bottom:32px" class="form-cover-wrapper form-has-cover form-page-cover-image-align-left">
+                  <div class="form-page-cover-image-wrapper" style="max-width:752px"><img src="https://www.jotform.com/uploads/wertzudc2/form_files/logo.png" class="form-page-cover-image" width="40" height="40" aria-label="Form Logo" style="aspect-ratio:40/40" /></div>
+                </div>
+                <div role="main" class="form-all">
+                  <div class="form-section">
+                    <h2>Submit Your Character</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_4">
+                        What's your Discord tag?
+                        <span class="form-required">*</span>
+                      </label>
+                      <input type="text" id="input_4" name="q4_whatsYour" class="form-textbox" placeholder="@kaida48" required />
+                    </div>
+                    <fieldset>
+                      <legend>Character Basics</legend>
+                      <div id="id_28" class="form-line">
+                        <label class="form-label-top" for="input_28_first">Character's Name</label>
+                        <div class="form-input">
+                          <input type="text" id="input_28_first" name="q28_name[first]" placeholder="First Name" class="form-textbox" />
+                          <input type="text" id="input_28_last" name="q28_name[last]" placeholder="Last Name" class="form-textbox" />
+                        </div>
+                      </div>
+                      <div id="id_7" class="form-line">
+                        <label class="form-label-top">Character's Pronouns</label>
+                        <div class="form-multiple-column">
+                          <span class="form-radio-item"><input type="radio" name="q7_pronouns" value="He/Him" id="input_7_0" /><label for="input_7_0">He/Him</label></span>
+                          <span class="form-radio-item"><input type="radio" name="q7_pronouns" value="She/Her" id="input_7_1" /><label for="input_7_1">She/Her</label></span>
+                          <span class="form-radio-item"><input type="radio" name="q7_pronouns" value="They/Them" id="input_7_2" /><label for="input_7_2">They/Them</label></span>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="form-line">
+                      <label class="form-label" for="input_8">
+                        How does your character look?
+                        <span class="form-required">*</span>
+                      </label>
+                      <div class="form-input-wide">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <textarea id="input_8" class="form-textarea validate[required]" name="q8_howDoes" style="width:648px;height:51px" data-component="textarea" required aria-labelledby="label_8 sublabel_input_8"></textarea>
+                          <label class="form-sub-label" for="input_8" id="sublabel_input_8" style="min-height:13px">Make it detailed :D</label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Background and History</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_12">What was your character's job or role before the war?</label>
+                      <input type="text" id="input_12" name="q12_whatWas" class="form-textbox" placeholder="Spy, Weaponsmith" />
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_13">Tell us about your character's background and history before the war.</label>
+                      <textarea id="input_13" class="form-textarea" name="q13_tellUs" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_13 sublabel_input_13"></textarea>
+                      <label class="form-sub-label" for="input_13" id="sublabel_input_13" style="min-height:13px">Include major life events, education, significant personal experiences, and how these have shaped who they are now.</label>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Goals</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_17">What are your characters ambitions and what do they want to achieve?</label>
+                      <textarea id="input_17" class="form-textarea" name="q17_whatAre" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_17"></textarea>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_18">What motivates your character to achieve their goals?</label>
+                      <textarea id="input_18" class="form-textarea" name="q18_whatMotivates" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_18 sublabel_input_18"></textarea>
+                      <label class="form-sub-label" for="input_18" id="sublabel_input_18" style="min-height:13px">Consider their personal drive, such as survival, revenge, loyalty, or something else.</label>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Personality and Self</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_21">Describe your character's personality</label>
+                      <textarea id="input_21" class="form-textarea" name="q21_describeYour" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_21 sublabel_input_21"></textarea>
+                      <label class="form-sub-label" for="input_21" id="sublabel_input_21" style="min-height:13px">How do they handle stress? How do they interact with others? Include both positive and negative traits.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_22">What are your character's strengths?</label>
+                      <textarea id="input_22" class="form-textarea" name="q22_whatAre22" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_22 sublabel_input_22"></textarea>
+                      <label class="form-sub-label" for="input_22" id="sublabel_input_22" style="min-height:13px">List any skills, talents, or positive traits they possess.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_23">What are your character's fears and weaknesses?</label>
+                      <textarea id="input_23" class="form-textarea" name="q23_whatAre23" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_23 sublabel_input_23"></textarea>
+                      <label class="form-sub-label" for="input_23" id="sublabel_input_23" style="min-height:13px">List any fears, vulnerabilities, or negative traits they have.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_24">What are your character's hobbies and interests?</label>
+                      <textarea id="input_24" class="form-textarea" name="q24_whatAre24" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_24 sublabel_input_24"></textarea>
+                      <label class="form-sub-label" for="input_24" id="sublabel_input_24" style="min-height:13px">Include any activities or passions they enjoy.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_25">Does your character have any unique abilities? If yes, please describe them.</label>
+                      <textarea id="input_25" class="form-textarea" name="q25_doesYour" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_25"></textarea>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Relationships</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_29">Does your character have any friends? If yes, please write out their full names and describe the nature of these relationships.</label>
+                      <textarea id="input_29" class="form-textarea" name="q29_doesYour29" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_29 sublabel_input_29"></textarea>
+                      <label class="form-sub-label" for="input_29" id="sublabel_input_29" style="min-height:13px">Please only use names of actual existing characters in the roleplay.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_30">Does your character have any enemies? If yes, please write out their full names and describe the nature of these relationships.</label>
+                      <textarea id="input_30" class="form-textarea" name="q30_doesYour30" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_30 sublabel_input_30"></textarea>
+                      <label class="form-sub-label" for="input_30" id="sublabel_input_30" style="min-height:13px">Please only use names of actual existing characters in the roleplay.</label>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_31">How do these relationships (both friends and enemies) impact your character's goals and motivations?</label>
+                      <textarea id="input_31" class="form-textarea" name="q31_howDo" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_31 sublabel_input_31"></textarea>
+                      <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px">(required if any of the above are filled out)</label>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Views on Factions</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_34">What are your character's views on the USRF?</label>
+                      <textarea id="input_34" class="form-textarea" name="q34_whatAre34" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_34"></textarea>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_35">What are your character's views on the Alumni?</label>
+                      <textarea id="input_35" class="form-textarea" name="q35_whatAre35" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_35"></textarea>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_36">What are your character's views on the Bandit Gangs?</label>
+                      <textarea id="input_36" class="form-textarea" name="q36_whatAre36" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_36"></textarea>
+                    </div>
+                    <div class="form-line">
+                      <label class="form-label" for="input_37">What are your character's views on The Resistance?</label>
+                      <textarea id="input_37" class="form-textarea" name="q37_whatAre37" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_37"></textarea>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="button" class="form-nav-button next">Next</button>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <h2>Final Confirmation</h2>
+                    <div class="form-line">
+                      <label class="form-label" for="input_38">
+                        I have read the rules and lore thoroughly.
+                        <span class="form-required">*</span>
+                      </label>
+                      <div class="form-input-wide">
+                        <div class="form-single-column" role="group" aria-labelledby="label_38" data-component="radio">
+                          <div class="form-radio-item">
+                            <input type="radio" aria-describedby="label_38" class="form-radio" id="input_38_0" name="q38_iHave" value="Yes" />
+                            <label id="label_input_38_0" for="input_38_0">Yes</label>
+                          </div>
+                          <div class="form-radio-item">
+                            <input type="radio" aria-describedby="label_38" class="form-radio" id="input_38_1" name="q38_iHave" value="No" />
+                            <label id="label_input_38_1" for="input_38_1">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-navigation">
+                      <button type="button" class="form-nav-button back">Back</button>
+                      <button type="submit" class="form-submit-button">Submit</button>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  JotForm.showJotFormPowered = "new_footer";
+                </script>
+                <script>
+                  JotForm.poweredByText = "Powered by Jotform";
+                </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="242056625768060" />
+                <script type="text/javascript">
+                  var all_spc = document.querySelectorAll("form[id='242056625768060'] .si" + "mple" + "_spc");
+                  for (var i = 0; i < all_spc.length; i++)
+                  {
+                    all_spc[i].value = "242056625768060-242056625768060";
+                  }
+                </script>
+              </form>
+        </section>
+    </main>
 
-    <footer>
-        <p>Created by kaida48</p>
-        <div class="footer-links">
-            <a href="#" aria-label="Contact">Contact</a>
-            <a href="#" aria-label="Social Media">Social Media</a>
-            <a href="#" aria-label="Newsletter">Newsletter</a>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="copyright">
+                &copy; 2023 Project-Phoenix. All rights reserved.
+            </div>
+            <div class="credits">
+                Made with love by Kaida <3
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="setting.html">Setting</a>
+                <a href="plot.html">Plot</a>
+                <a href="factions.html">Factions</a>
+                <a href="key-locations.html">Key Locations</a>
+                <a href="events.html">Events</a>
+                <a href="endings.html">Possible Endings</a>
+                <a href="rules.html">Rules</a>
+                <a href="join.html">Join Us</a>
+                <a href="characters.html">Active Characters</a>
+            </nav>
         </div>
     </footer>
 
+    <script src="https://cdn03.jotfor.ms/static/prototype.forms.js?v=3.3.55548" type="text/javascript"></script>
+    <script src="https://cdn01.jotfor.ms/static/jotform.forms.js?v=3.3.55548" type="text/javascript"></script>
+    <script src="https://cdn02.jotfor.ms/js/vendor/maskedinput_5.0.9.min.js?v=3.3.55548" type="text/javascript"></script>
+    <script src="https://cdn01.jotfor.ms/s/umd/1ae8dd1c9d4/for-form-branding-footer.js?v=3.3.55548" type="text/javascript" defer></script>
+    <script src="https://cdn03.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.55548" type="text/javascript"></script>
+    <script src="https://cdn01.jotfor.ms/js/errorNavigation.js?v=3.3.55548" type="text/javascript"></script>
+    <script src="join.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const lightbox = document.querySelector('.lightbox');
-        const lightboxImg = document.querySelector('.lightbox-content');
-        const closeLightbox = document.querySelector('.close-lightbox');
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
-
-        document.querySelectorAll('.step-image-container').forEach(container => {
-            container.addEventListener('click', function() {
-                const img = this.querySelector('.step-image');
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'block';
-            });
+        // Override any external styles that might be changing the background
+        window.addEventListener('load', function() {
+            document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
         });
-
-        closeLightbox.addEventListener('click', function() {
-            lightbox.style.display = 'none';
-        });
-
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-
-        mobileMenuBtn.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-    });
     </script>
 </body>
 </html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Character - Project Phoenix</title>
+    <link rel="stylesheet" href="create-character.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo and site title -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Project Phoenix Logo">
+                    <span class="logo-text">Project-Phoenix</span>
+                </a>
+            </div>
+            <!-- Mobile menu icon (three horizontal lines) -->
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Navigation links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="world.html">World</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="characters.html">Active Characters</a></li>
+                <li><a href="create-character.html">Create Character</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+
+    <main>
+        <section class="form-section">
+            <h1>Create Your Character</h1>
+            <div class="form-container">
+                <form action="submit-character.php" method="POST" enctype="multipart/form-data">
+                    <!-- Section 1: Basic Info -->
+                    <h2>Section 1 of 6: Submit Your Character!</h2>
+                    <p>Fill out this form with the basic info of your character. If you encounter any problems, please DM @kaida48 on Discord.</p>
+                    
+                    <label for="discord-tag" class="required">What is your Discord tag?</label>
+                    <input type="text" id="discord-tag" name="discord_tag" required>
+                    
+                    <label for="name" class="required">What is the name of your character?</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="birthdate" class="required">When was your character born?</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                    
+                    <label for="pronouns" class="required">What are your character's pronouns?</label>
+                    <select id="pronouns" name="pronouns" required>
+                        <option value="He/Him">He/Him</option>
+                        <option value="She/Her">She/Her</option>
+                        <option value="They/Them">They/Them</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div id="pronouns-other-container" style="display: none;">
+                        <input type="text" id="pronouns-other" name="pronouns_other" placeholder="If other, please specify">
+                    </div>
+                    
+                    <label class="required">How would you like to provide your character's appearance?</label>
+                    <div>
+                        <input type="radio" id="describe-appearance" name="appearance-option" value="describe" checked>
+                        <label for="describe-appearance">Describe Appearance</label>
+                        <input type="radio" id="upload-picture" name="appearance-option" value="upload">
+                        <label for="upload-picture">Upload Picture</label>
+                    </div>
+                    
+                    <div id="describe-appearance-container">
+                        <label for="appearance" class="required">How does your character look?</label>
+                        <textarea id="appearance" name="appearance"></textarea>
+                    </div>
+                    
+                    <div id="upload-picture-container" style="display: none;">
+                        <div class="custom-file-input">
+                            <input type="file" id="character-picture" name="character_picture">
+                            <label for="character-picture">Attach a front picture of your character in After The Flash: Wintertide</label>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Background and History -->
+                    <h2>Section 2 of 6: Background and History</h2>
+                    
+                    <label for="job" class="required">What was your character's job or role before the war?</label>
+                    <input type="text" id="job" name="job" required>
+                    
+                    <label for="background" class="required">Describe your character's background and history before the war.</label>
+                    <textarea id="background" name="background" required></textarea>
+
+                    <!-- Section 3: Goals -->
+                    <h2>Section 3 of 6: Goals</h2>
+                    
+                    <label for="ambitions" class="required">What are your character's ambitions and what do they want to achieve?</label>
+                    <textarea id="ambitions" name="ambitions" required></textarea>
+                    
+                    <label for="motivations" class="required">What motivates your character to achieve these goals?</label>
+                    <textarea id="motivations" name="motivations" required></textarea>
+
+                    <!-- Section 4: Personality and Self -->
+                    <h2>Section 4 of 6: Personality and Self</h2>
+                    
+                    <label for="personality" class="required">Describe your character's personality.</label>
+                    <textarea id="personality" name="personality" required></textarea>
+                    
+                    <label for="strengths" class="required">What are your character's strengths?</label>
+                    <textarea id="strengths" name="strengths" required></textarea>
+                    
+                    <label for="weaknesses" class="required">What are your character's fears and weaknesses?</label>
+                    <textarea id="weaknesses" name="weaknesses" required></textarea>
+                    
+                    <label for="hobbies" class="required">What are your character's hobbies and interests?</label>
+                    <textarea id="hobbies" name="hobbies" required></textarea>
+                    
+                    <label for="abilities">Does your character have any unique abilities? If yes, please describe them.</label>
+                    <textarea id="abilities" name="abilities"></textarea>
+
+                    <!-- Section 5: Relationships -->
+                    <h2>Section 5 of 6: Relationships</h2>
+                    
+                    <label for="friends">Does your character have any friends? If yes, please write out their full names and describe the nature of these relationships.</label>
+                    <textarea id="friends" name="friends"></textarea>
+                    
+                    <label for="enemies">Does your character have any enemies? If yes, please write out their full names and describe the nature of these relationships.</label>
+                    <textarea id="enemies" name="enemies"></textarea>
+                    
+                    <label for="relationships-impact">How do these relationships (both friends and enemies) impact your character's goals and motivations?</label>
+                    <textarea id="relationships-impact" name="relationships_impact"></textarea>
+
+                    <!-- Section 6: Views on Factions -->
+                    <h2>Section 6 of 6: Views on Factions</h2>
+                    
+                    <label for="views-usrf" class="required">What are your character's views on the USRF?</label>
+                    <textarea id="views-usrf" name="views_usrf" required></textarea>
+                    
+                    <label for="views-alumni" class="required">What are your character's views on the Alumni?</label>
+                    <textarea id="views_alumni" name="views_alumni" required></textarea>
+                    
+                    <label for="views-bandit" class="required">What are your character's views on the Bandit Gangs?</label>
+                    <textarea id="views_bandit" name="views_bandit" required></textarea>
+                    
+                    <label for="views-resistance" class="required">What are your character's views on The Resistance?</label>
+                    <textarea id="views_resistance" name="views_resistance" required></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add your footer content here -->
+    </footer>
+
+    <!-- JavaScript for auto-expanding text areas and conditional display -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(textarea => {
+                textarea.addEventListener('input', function() {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
+                });
+            });
+
+            const pronounsSelect = document.getElementById('pronouns');
+            const pronounsOtherContainer = document.getElementById('pronouns-other-container');
+            const appearanceOptionRadios = document.getElementsByName('appearance-option');
+            const describeAppearanceContainer = document.getElementById('describe-appearance-container');
+            const uploadPictureContainer = document.getElementById('upload-picture-container');
+
+            pronounsSelect.addEventListener('change', function() {
+                if (this.value === 'Other') {
+                    pronounsOtherContainer.style.display = 'block';
+                } else {
+                    pronounsOtherContainer.style.display = 'none';
+                }
+            });
+
+            appearanceOptionRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'describe') {
+                        describeAppearanceContainer.style.display = 'block';
+                        uploadPictureContainer.style.display = 'none';
+                    } else if (this.value === 'upload') {
+                        describeAppearanceContainer.style.display = 'none';
+                        uploadPictureContainer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,382 +1,180 @@
-/* styles.css */
-
-/* CSS Variables */
-:root {
-    --primary-color: #ff6600;
-    --secondary-color: #333;
-    --text-color: #ffffff; /* Changed to white */
-    --hover-color: #e65c00;
-    --font-family: Arial, sans-serif;
-    --font-size-large: 3em;
-    --font-size-medium: 1.5em;
-    --font-size-small: 1em;
-}
-
-/* Define custom fonts */
-@font-face {
-    font-family: 'CustomFontRegular';
-    src: url('fonts/fontname/CustomFont-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'MonaspaceKrypton';
-    src: url('fonts/monaspace/MonaspaceKrypton/MonaspaceKrypton-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* General styles for the body */
-body {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
+/* Reset default styles for all elements */
+* {
     margin: 0;
     padding: 0;
-    color: var(--text-color);
+    box-sizing: border-box;
 }
 
-body.rules-page {
-    background-color: #1a1a1a; /* Dark gray */
+/* Set base styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
+/* Custom font definitions */
+@font-face {
+    font-family: 'MonaspaceKrypton';
+    src: url('../fonts/monaspace/MonaspaceKrypton/MonaspaceKrypton-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PassA38';
+    src: url('../fonts/PassA38/Pass_A38.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Navbar styles */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
-    color: var(--text-color);
-    padding: 10px 20px; /* Adjust padding */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
-    z-index: 1000; /* Ensure it stays on top */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 16px 32px;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header .logo a {
+/* Logo styles */
+.logo a {
     display: flex;
     align-items: center;
-}
-
-header .logo img {
-    height: 40px; /* Adjust the height as needed */
-}
-
-header nav {
-    transform: translateX(-50px); /* Move navbar content 50px to the left */
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin: 0 15px; /* Increase spacing between items */
-}
-
-header nav ul li a {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif; /* Apply custom font */
-    color: var(--text-color);
     text-decoration: none;
-    padding: 10px 15px; /* Adjust padding */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: filter 0.3s ease;
 }
 
-header nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Add hover effect */
-    color: #fff; /* Change text color on hover */
-    border-radius: 5px; /* Add border radius */
+.logo a:hover {
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
 }
 
-/* Mobile menu button */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5em;
-    cursor: pointer;
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+    transition: filter 0.3s ease;
 }
 
-/* Rules Page Content */
-.rules-page .hero {
-    background-image: url('images/featured/rules.jpg');
+.logo a:hover img {
+    filter: brightness(1.1);
 }
 
-.rules-content {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.rules-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: rgba(255, 102, 0, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.rules-header h1 {
+.logo-text {
+    color: #c1121f;
+    font-size: 24px;
+    padding: 5px;
     font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 3em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
-.rules-header p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--text-color);
+.logo a:hover .logo-text {
+    color: rgb(183, 8, 20);
+    text-shadow: 0 0 5px rgba(255, 26, 47, 0.4);
 }
 
-.rules-navigation {
+/* Navigation links styles */
+.nav-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 50px;
+    list-style: none;
+    align-items: center;
+    gap: 50px;
+    padding-left: 20px;
 }
 
-.nav-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    border-radius: 5px;
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.nav-links li {
+    position: relative;
 }
 
-.nav-button:hover {
-    background-color: var(--hover-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.rule-section {
-    background-color: rgba(42, 42, 42, 0.7);
-    border-radius: 10px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.rule-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.rule-section h2 {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 15px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.rule-content {
-    font-family: 'CustomFontRegular', Arial, sans-serif;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--text-color);
-}
-
-.prohibited-actions, .dictionary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.action-card, .dictionary-item {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.action-card:hover, .dictionary-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.action-card h4, .dictionary-item strong {
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: block;
-}
-
-.action-card p, .dictionary-item p {
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-/* Add some visual separators */
-.rule-section:not(:last-child)::after {
+.nav-links li:not(:last-child)::after {
     content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
-    margin-top: 50px;
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'PassA38', 'Comic Sans MS', sans-serif;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-links a:hover {
+    color: #c1121f;
+}
+
+/* Mobile menu icon styles */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
 }
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
-    .rules-header h1 {
-        font-size: 2.5em;
-    }
-
-    .rule-section h2 {
-        font-size: 2em;
-    }
-
-    .prohibited-actions, .dictionary-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .rule-section {
-        padding: 30px;
-    }
-}
-
-/* Foreword section */
-.rule-section.foreword {
-    background-color: rgba(255, 102, 0, 0.15);
-    border: 2px solid var(--primary-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.rule-section.foreword::before {
-    content: '!';
-    font-family: 'MonaspaceKrypton', Arial, sans-serif;
-    position: absolute;
-    top: -20px;
-    right: 20px;
-    font-size: 150px;
-    color: rgba(255, 102, 0, 0.1);
-    z-index: 0;
-}
-
-.rule-section.foreword h2 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-}
-
-.rule-section.foreword .rule-content {
-    position: relative;
-    z-index: 1;
-    font-size: 1.2em;
-    font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.rule-section.foreword::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: -10px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    transform: rotate(45deg);
-    z-index: 0;
-}
-
-/* Footer */
-footer {
-    background-color: #ff6600; /* Changed background color to #ff6600 */
-    color: var(--text-color);
-    text-align: center;
-    padding: 10px; /* Make the footer thinner */
-    display: flex;
-    justify-content: center; /* Center the footer links */
-    align-items: center; /* Center items vertically */
-    position: relative; /* Allow absolute positioning of the created by text */
-}
-
-.footer-links {
-    margin: 0; /* Remove margin */
-}
-
-.footer-links a {
-    color: #ffffff; /* Changed link color to white */
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin: 0; /* Remove margin */
-    position: absolute; /* Position the text absolutely */
-    right: 10px; /* Align to the far right */
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-    }
-
-    header nav {
-        flex-basis: 100%;
-        display: none;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 20px 0;
-    }
-
-    header nav.active {
-        display: block;
-    }
-
-    header nav ul {
+@media screen and (max-width: 768px) {
+    .navbar {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
     }
 
-    header nav ul li {
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
+    .logo {
+        margin-bottom: 10px;
     }
 
-    .mobile-menu-btn {
+    .menu-icon {
         display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
     }
 
-    .rules-header h1 {
-        font-size: 2.5em;
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
     }
 
-    .rule-section h2 {
-        font-size: 2em;
+    .nav-links.active {
+        display: flex;
     }
 
-    .prohibited-actions, .dictionary-grid {
-        grid-template-columns: 1fr;
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        display: none;
     }
 }
+
+/* Add your existing rules.css styles here */
