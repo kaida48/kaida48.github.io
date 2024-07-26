@@ -1,0 +1,328 @@
+/* Global styles */
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'MonaspaceKrypton', 'Arial', sans-serif;
+    background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%), 
+                      linear-gradient(-45deg, #1a1a1a 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #1a1a1a 75%), 
+                      linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Form container */
+.form-all {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #e0e0e0;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 40px auto;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-all:hover {
+    box-shadow: 0 15px 40px rgba(193, 18, 31, 0.2);
+}
+
+/* Form headers */
+.form-header-group {
+    border-bottom: 2px solid #c1121f;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.form-header {
+    color: #c1121f;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.form-subHeader {
+    color: #a0a0a0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'PassA38', 'Comic Sans MS', sans-serif;
+}
+
+/* Form labels */
+.form-label {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.form-label:hover {
+    color: #c1121f;
+    transform: translateX(5px);
+}
+
+/* Form inputs */
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select,
+input[type="date"] {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-color: rgba(42, 42, 42, 0.8) !important;
+    border: 1px solid #444 !important;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.form-textbox:focus,
+.form-textarea:focus,
+.form-dropdown:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus,
+input[type="date"]:focus {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border-color: #c1121f !important;
+    box-shadow: 0 0 0 2px rgba(193, 18, 31, 0.25) !important;
+    outline: none;
+}
+
+/* Aggressively remove highlighting effect on the container */
+.form-line,
+.form-line:hover,
+.form-line.form-line-active,
+.form-line.form-line-active:hover {
+    background-color: transparent !important;
+    background-image: none !important;
+    transition: none !important;
+}
+
+/* Remove any box-shadow or other effects on the container */
+.form-line,
+.form-line:hover,
+.form-line.form-line-active,
+.form-line.form-line-active:hover {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Style for inputs, focused or not */
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select,
+.form-textbox:focus,
+.form-textarea:focus,
+.form-dropdown:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition: border-color 0.3s ease !important;
+}
+
+/* Style for focused inputs */
+.form-textbox:focus,
+.form-textarea:focus,
+.form-dropdown:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #c1121f !important;
+    box-shadow: 0 0 0 2px rgba(193, 18, 31, 0.25) !important;
+}
+
+/* Remove any additional styling on form-input-wide */
+.form-input-wide {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove red border from inputs unless they're invalid */
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select,
+input[type="date"] {
+    border-color: #444 !important;
+}
+
+/* Only show red border when input is invalid and has been interacted with */
+.form-textbox:invalid:not(:focus):not(:placeholder-shown),
+.form-textarea:invalid:not(:focus):not(:placeholder-shown),
+.form-dropdown:invalid:not(:focus):not(:placeholder-shown),
+input:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown),
+select:invalid:not(:focus):not(:placeholder-shown),
+input[type="date"]:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #c1121f !important;
+}
+
+/* Radio buttons and checkboxes */
+.form-radio-item,
+.form-checkbox-item {
+    margin-bottom: 8px;
+}
+
+.form-radio-item label,
+.form-checkbox-item label {
+    color: #ffffff;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+.form-radio-item label:hover,
+.form-checkbox-item label:hover {
+    color: #c1121f;
+}
+
+/* Submit button styles */
+.form-submit-button {
+    background-color: #c1121f !important;
+    color: #ffffff !important;
+    padding: 14px 28px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-top: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.form-submit-button:hover {
+    background-color: #e61a2f !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.form-submit-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Page break buttons */
+.form-pagebreak-back,
+.form-pagebreak-next {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.form-pagebreak-back:hover,
+.form-pagebreak-next:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form sections */
+.form-section {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .form-all {
+        padding: 20px;
+    }
+
+    .form-header {
+        font-size: 28px;
+    }
+
+    .form-submit-button,
+    .form-pagebreak-back,
+    .form-pagebreak-next {
+        width: 100%;
+    }
+}
+
+/* Hide undefined error messages */
+.form-error-message {
+    display: none !important;
+}
+
+#id_submit {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+#id_submit.show {
+    opacity: 1;
+}

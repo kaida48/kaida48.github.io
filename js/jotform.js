@@ -13648,6 +13648,18 @@ var JotForm = {
         this.setPrintButtonActions();
     },
 
+    isValidSuggestedDonation: function () {
+        if (['product', 'subscription'].includes(window.paymentType)) { return true; }
+
+        const donationMinAmount = JotForm.donationField && parseFloat(JotForm.donationField.readAttribute('data-min-amount'));
+        if (donationMinAmount && !isNaN(donationMinAmount)) {
+            const donationValue = JotForm.donationField.getValue();
+            return !(isNaN(donationValue) || donationValue < donationMinAmount);
+        }
+
+        return true;
+    },
+
     hasMinTotalOrderAmount: function () {
         var minTotalOrderAmountHiddenField = document.getElementsByName('minTotalOrderAmount');
         var hasMinTotalOrderAmount = typeof minTotalOrderAmountHiddenField !== 'undefined' && minTotalOrderAmountHiddenField.length > 0;
@@ -16333,6 +16345,10 @@ var JotForm = {
 
         if(JotForm.isPaymentSelected() && !JotForm.isValidMinTotalOrderAmount() && container.classList.contains("form-minTotalOrderAmount-error")) {
           return;
+        }
+
+        if (JotForm.isPaymentSelected() && !JotForm.isValidSuggestedDonation()) {
+            return;
         }
 
         if (
